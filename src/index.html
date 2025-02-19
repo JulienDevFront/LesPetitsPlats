@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="./index.css" />
     <title>Les Petits Plats - Accueil</title>
   </head>
-  <body class="bg-blue-500"></body>
-  <script src="./index.js"></script>
+  <body>
+    <header class="flex h-[667px] flex-col bg-[url('./assets/images/hero-header-img.jpg')] bg-cover bg-center p-8">
+      <nav aria-label="Navigation principale">
+        <a class="cursor-pointer" href="./index.html"><img src="./assets/icons/logo-App.svg" alt="Logo Les Petits Plats, lien vers l'accueil" /></a>
+      </nav>
+      <section class="flex-auto content-center px-[15%]">
+        <h1 class="font-anton flex flex-col text-center text-5xl leading-tight text-amber-500 uppercase"><span>cherchez parmi plus de 1500 recettes</span><span>du quotidien, simples et délicieuses</span></h1>
+        <div id="searchBar" class="mt-8 flex gap-2 rounded-xl bg-white p-2.5">
+          <label for="search" class="sr-only">Rechercher une recette</label>
+          <input id="search" type="text" placeholder="Rechercher une recette, un ingrédient..." class="flex-auto rounded-xl px-8" />
+          <button class="rounded-xl bg-black p-3 transition-colors hover:bg-amber-500" title="Rechercher"><img src="./assets/icons/loop-white-icon.svg" alt="Rechercher" /></button>
+        </div>
+      </section>
+    </header>
+    <script src="./index.js"></script>
+  </body>
 </html>
