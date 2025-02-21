@@ -3,24 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./styles/output.css" />
     <title>Les Petits Plats - Accueil</title>
   </head>
   <body class="bg-gray-200">
-    <header class="flex h-[667px] flex-col bg-[url('./assets/images/hero-header-img.jpg')] bg-cover bg-center p-8">
+    <header class="flex h-[667px] flex-col bg-[url('./../assets/images/hero-header-img.jpg')] bg-cover bg-center p-8">
       <nav aria-label="Navigation principale">
-        <a class="cursor-pointer" href="./index.html"><img src="./assets/icons/logo-App.svg" alt="Logo Les Petits Plats, lien vers l'accueil" /></a>
+        <a class="cursor-pointer" href="./index.html">
+          <img src="./assets/icons/logo-App.svg" alt="Logo Les Petits Plats, lien vers l'accueil" />
+        </a>
       </nav>
       <section class="flex-auto content-center px-[15%]">
-        <h1 class="font-anton flex flex-col text-center text-5xl leading-tight text-amber-500 uppercase"><span>cherchez parmi plus de 1500 recettes</span><span>du quotidien, simples et délicieuses</span></h1>
+        <h1 class="font-anton flex flex-col text-center text-5xl leading-tight text-amber-500 uppercase">
+          <span>cherchez parmi plus de 1500 recettes</span>
+          <span>du quotidien, simples et délicieuses</span>
+        </h1>
         <div id="searchBar" class="mt-8 flex gap-2 rounded-xl bg-white p-2.5">
           <label for="search" class="sr-only">Rechercher une recette</label>
-          <input id="search" type="text" placeholder="Rechercher une recette, un ingrédient..." class="flex-auto rounded-xl px-8" />
-          <button class="rounded-xl bg-black p-3 transition-colors hover:bg-amber-500" title="Rechercher"><img src="./assets/icons/loop-white-icon.svg" alt="Rechercher" /></button>
+          <input id="search" class="flex-auto rounded-xl px-8" type="text" placeholder="Rechercher une recette, un ingrédient..." />
+          <button class="rounded-xl bg-black p-3 transition-colors hover:bg-amber-500" title="Rechercher">
+            <img src="./assets/icons/loop-white-icon.svg" alt="Rechercher" />
+          </button>
         </div>
       </section>
     </header>
     <main></main>
-    <script src="./index.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/services/API_instance.js"></script>
   </body>
 </html>
