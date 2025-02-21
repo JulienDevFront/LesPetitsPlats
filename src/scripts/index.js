@@ -1,10 +1,11 @@
-import { API_instance } from "./services/API_instance.js";
+import { promise } from "./helpers/promise.js";
+import { API_repices } from "./services/API_repices.js";
 
 const App = async () => {
-    const API_path = "https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json";
-    const API_import = await API_instance.import(`${API_path}`);
-    const API = new API_instance(API_import).data;
-    console.log(API);
+    const API_repices_path = "https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json";
+    const API_repices_import = await promise(`${API_repices_path}`);
+    const API_repices_instance = new API_repices(API_repices_import);
+    console.log(API_repices_instance);
 };
 
-App();
+App(); 
