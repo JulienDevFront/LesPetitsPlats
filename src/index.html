@@ -6,13 +6,17 @@
     <link rel="stylesheet" href="./styles/output.css" />
     <title>Les Petits Plats - Accueil</title>
   </head>
+
   <body class="bg-gray-200">
+
     <header class="flex h-[667px] flex-col bg-[url('./../assets/images/hero-header-img.jpg')] bg-cover bg-center p-8">
+
       <nav aria-label="Navigation principale">
         <a class="cursor-pointer" href="./index.html">
           <img src="./assets/icons/logo-App.svg" alt="Logo Les Petits Plats, lien vers l'accueil" />
         </a>
       </nav>
+
       <section class="flex-auto content-center px-[15%]">
         <h1 class="font-anton flex flex-col text-center text-5xl leading-tight text-amber-500 uppercase">
           <span>cherchez parmi plus de 1500 recettes</span>
@@ -26,8 +30,37 @@
           </button>
         </div>
       </section>
+
     </header>
-    <main></main>
+
+      <aside class="flex">
+        <section>
+          <h3>Ingrédients</h3>
+          <img />
+          <label for=""></label>
+          <input />
+          <ul>
+            <li>Lorem lorem lorem</li>
+            <li>Lorem lorem lorem</li>
+            <li>Lorem lorem lorem</li>
+            <li>Lorem lorem lorem</li>
+            <li>Lorem lorem lorem</li>
+            <li>Lorem lorem lorem</li>
+          </ul>
+        </section>
+        <!-- recipesCountSection HTML element and VIEW / dynamic interaction with JAVASCRIPT -->
+        <section id="recipesCountSection">
+          <h2 class="font-anton text-xl">
+            <span id="recipesCountSection__number"></span>
+            <span id="recipesCountSection__repice">recettes</span>
+          </h2>
+        </section>
+      </aside>
+      <main id="recipesSection">
+        <div class="recipe"></div>
+        <div class="recipe"></div>
+        <div class="recipe"></div>
+      </main>
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
