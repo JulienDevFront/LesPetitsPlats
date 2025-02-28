@@ -18,21 +18,21 @@
       </nav>
 
       <section class="flex-auto content-center px-[15%]">
-        <h1 class="font-anton flex flex-col text-center text-5xl leading-tight text-amber-500 uppercase">
+        <h1 class="font-anton flex flex-col text-center text-5xl leading-tight text-yellow-300 uppercase">
           <span>cherchez parmi plus de 1500 recettes</span>
           <span>du quotidien, simples et délicieuses</span>
         </h1>
         <div id="searchBar" class="mt-8 flex gap-2 rounded-xl bg-white p-2.5">
           <label for="search" class="sr-only">Rechercher une recette</label>
           <input id="search" class="flex-auto rounded-xl px-8" type="text" placeholder="Rechercher une recette, un ingrédient..." />
-          <button class="rounded-xl bg-black p-3 transition-colors hover:bg-amber-500" title="Rechercher">
+          <button class="rounded-xl bg-black p-3 transition-colors hover:bg-yellow-300" title="Rechercher">
             <img src="./assets/icons/loop-white-icon.svg" alt="Rechercher" />
           </button>
         </div>
       </section>
     </header>
     <!-- aside element / filter and sort search ingredients, devices, Utensils and display count recipes -->
-    <aside class="pt-8 px-24 py-24 grid grid-cols-[auto_auto_auto_1fr] gap-16">
+    <aside class="pt-8 pl-24 pr-24 grid grid-cols-[auto_auto_auto_1fr] gap-16">
       <!-- section element / filter, sort and search by ingredients -->
       <section class="w-48 bg-white rounded-xl pl-4 pr-4">
         <header class="flex justify-between content-center pt-4 pb-4">
@@ -98,9 +98,49 @@
         </h2>
       </section>
     </aside>
-
-    <main id="recipesSection">
-      <div class="recipe"></div>
+    <!-- main element / display a recipe / recipe is module in MODELS / generate dynamic with JAVASCRIPT -->
+    <main id="recipesSection" class="grid grid-cols-3 gap-8 mt-14 pl-24 pr-24 w-full">
+      <!-- article element / display a recipe / recipe is module in MODELS / generate dynamic with JAVASCRIPT -->
+      <article class="w-80 rounded-3xl bg-white">
+        <header class="relative">
+          <img class="h-64 object-cover"/>
+          <h3 class="pt-8 pl-6 pr-6 font-anton text-lg text-black">Titre de la recette</h3>
+          <p class="font-manrope text-xs text-black font-normal bg-yellow-300 w-16 flex justify-center content-center rounded-xl absolute top-5 right-5">10mn</p>
+        </header>
+        <section class="pt-7 pl-6 pr-6">
+          <h4 class="font-manrope font-bold text-gray-400 text-xs">Recette</h4>
+          <p class="pt-4 text-black font-manrope font-normal text-sm">Mettre les glaçons à votre goût dans le blender, ajouter le lait, la crème de coco, le jus de 2 citrons et le sucre. Mixer jusqu'à avoir la consistence désirée.</p>
+          <h4 class="pt-8 font-manrope font-bold text-gray-400 text-xs">Ingrédients</h4>
+          <div>
+            <ul class="text-sm font-manrope grid grid-cols-2 pb-16 pt-4 gap-5">
+              <li>
+                <span class="text-black text-sm flex flex-col">Lait de coco</span>
+                <span class="text-gray-400 text-sm">400ml</span>
+              </li>
+              <li>
+                <span class="text-black text-sm flex flex-col">Lait de coco</span>
+                <span class="text-gray-400 text-sm">400ml</span>
+              </li>
+              <li>
+                <span class="text-black text-sm flex flex-col">Lait de coco</span>
+                <span class="text-gray-400 text-sm">400ml</span>
+              </li>
+              <li>
+                <span class="text-black text-sm flex flex-col">Lait de coco</span>
+                <span class="text-gray-400 text-sm">400ml</span>
+              </li>
+              <li>
+                <span class="text-black text-sm flex flex-col">Lait de coco</span>
+                <span class="text-gray-400 text-sm">400ml</span>
+              </li>
+              <li>
+                <span class="text-black text-sm flex flex-col">Lait de coco</span>
+                <span class="text-gray-400 text-sm">400ml</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
     </main>
     <script type="module" src="./scripts/index.js"></script>
   </body>
