@@ -21,9 +21,9 @@ export class ConstructorRecipeCard {
     createRecipeCard() {
         const container = document.querySelector('#recipesSection');
         const content = `
-            <article class="w-80 rounded-3xl bg-white" name="${this._id}">
+            <article class="w-full rounded-3xl bg-white shadow-lg" name="${this._id}">
                 <header class="relative">
-                    <img class="h-64 object-cover" src="./assets/images/${this._image}" alt="${this._name}"/>
+                    <img class="h-64 object-cover w-full rounded-tl-3xl rounded-tr-3xl" src="./assets/images/${this._image}" alt="${this._name}"/>
                     <h3 class="pt-8 pl-6 pr-6 font-anton text-lg text-black">${this._name}</h3>
                     <p class="font-manrope text-xs text-black font-normal bg-yellow-300 w-16 flex justify-center content-center rounded-xl absolute top-5 right-5">${this._time}mn</p>
                 </header>
