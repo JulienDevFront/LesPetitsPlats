@@ -7,10 +7,10 @@
  * - - -
  */
 export const recipesCountSection = () => {
-    const recipes = document.querySelector("#recipesSection");
+    const container = document.querySelector("#recipesSection");
     
     let numberOfRecipes = 0;
-    for(const recipe of recipes.children) numberOfRecipes = numberOfRecipes + 1
+    for(const recipe of container.children) numberOfRecipes = numberOfRecipes + 1
 
     const recipesCount = document.querySelector("#recipesCountSection__number");
     recipesCount.textContent = numberOfRecipes;
