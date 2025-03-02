@@ -545,6 +545,18 @@
   .right-5 {
     right: calc(var(--spacing) * 5);
   }
+  .z-1 {
+    z-index: 1;
+  }
+  .z-4 {
+    z-index: 4;
+  }
+  .z-7 {
+    z-index: 7;
+  }
+  .z-\[�����֩\$KvMf�\] {
+    z-index: �� ��֩$KvMf�;
+  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -563,6 +575,27 @@
       max-width: 96rem;
     }
   }
+  .m-0 {
+    margin: calc(var(--spacing) * 0);
+  }
+  .m-1 {
+    margin: calc(var(--spacing) * 1);
+  }
+  .m-3 {
+    margin: calc(var(--spacing) * 3);
+  }
+  .m-4 {
+    margin: calc(var(--spacing) * 4);
+  }
+  .m-5 {
+    margin: calc(var(--spacing) * 5);
+  }
+  .m-6 {
+    margin: calc(var(--spacing) * 6);
+  }
+  .m-9 {
+    margin: calc(var(--spacing) * 9);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -578,11 +611,41 @@
   .grid {
     display: grid;
   }
+  .table {
+    display: table;
+  }
+  .h-0 {
+    height: calc(var(--spacing) * 0);
+  }
+  .h-3 {
+    height: calc(var(--spacing) * 3);
+  }
+  .h-4 {
+    height: calc(var(--spacing) * 4);
+  }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
+  .h-7 {
+    height: calc(var(--spacing) * 7);
+  }
   .h-64 {
     height: calc(var(--spacing) * 64);
   }
   .h-\[667px\] {
     height: 667px;
+  }
+  .w-0 {
+    width: calc(var(--spacing) * 0);
+  }
+  .w-3 {
+    width: calc(var(--spacing) * 3);
+  }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
+  .w-9 {
+    width: calc(var(--spacing) * 9);
   }
   .w-16 {
     width: calc(var(--spacing) * 16);
@@ -680,11 +743,17 @@
   .object-cover {
     object-fit: cover;
   }
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
+  }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
   }
   .p-3 {
     padding: calc(var(--spacing) * 3);
+  }
+  .p-7 {
+    padding: calc(var(--spacing) * 7);
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);
@@ -703,6 +772,9 @@
   }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
+  }
+  .pr-2 {
+    padding-right: calc(var(--spacing) * 2);
   }
   .pr-2\.5 {
     padding-right: calc(var(--spacing) * 2.5);
@@ -806,6 +878,9 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .\[c\:��\e q��11\7 �\$\1 0c�\10 \] {
+    c: ��q��11�$0c�;
   }
   .hover\:bg-yellow-300 {
     &:hover {
