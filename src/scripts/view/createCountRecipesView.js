@@ -1,12 +1,12 @@
-/** JS.DOC
+/** JS.DOC ==>
  * - - -
- * @module and @function recipesCountSection
+ * @module and @function createCountRecipesView
  * - - -
  * @description This  function  will  count the number  of  recipes 
  * displayed on the page and display it in the recipesCountSection.
  * - - -
  */
-export const recipesCountSection = () => {
+export const createCountRecipesView = () => {
     const container = document.querySelector("#recipesSection");
     
     let numberOfRecipes = 0;

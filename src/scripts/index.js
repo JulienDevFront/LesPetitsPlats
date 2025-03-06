@@ -1,6 +1,8 @@
 import { data_fetch } from "./helpers/data_fetch.js"
 import { API_manager } from "./services/API_manager.js"
 import { createSearchListView } from "./view/createSearchListView.js"
+import { createCountRecipesView } from "./view/createCountRecipesView.js"
+import { createDisplayRecipesCardView } from "./view/createDisplayRecipesCardView.js"
 /** JS.DOC ==>
  * - - -
  * @function App
@@ -17,6 +19,8 @@ const App = async () => {
     createSearchListView("#ingredientsList", API_instance.ingredient_items)
     createSearchListView("#appliancesList", API_instance.appliance_items)
     createSearchListView("#ustensilsList", API_instance.ustensil_items)
+    createDisplayRecipesCardView("#recipesSection", API_instance._data)
+    createCountRecipesView();
 };
 
 App();
