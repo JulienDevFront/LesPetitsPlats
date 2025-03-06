@@ -8,7 +8,7 @@
  * - - -
  */
 export class ConstructorRecipeCard {
-    constructor({id, image, name, servings, ingredients, time, description}) {
+    constructor({id, image, name, servings, ingredients, time, description, appliance, ustensils}) {
         this._id = id;
         this._image = image;
         this._name = name;
@@ -16,7 +16,9 @@ export class ConstructorRecipeCard {
         this._ingredients = ingredients;
         this._time = time;
         this._description = description;
-    }     
+        this._appliance = appliance;
+        this._ustensils = ustensils
+    } 
 
     createRecipeCard() {
         const container = document.querySelector('#recipesSection');
@@ -32,10 +34,10 @@ export class ConstructorRecipeCard {
                     <p class="pt-4 text-black font-manrope font-normal text-sm">${this._description}</p>
                     <h4 class="pt-8 font-manrope font-bold text-gray-400 text-xs">Ingrédients</h4>
                     <ul class="text-sm font-manrope grid grid-cols-2 pb-16 pt-4 gap-5">
-                        ${this._ingredients.map(ingredient => `
+                        ${this._ingredients.map(key => `
                             <li>
-                                <span class="text-black text-sm flex flex-col">${ingredient.ingredient}</span>
-                                <span class="text-gray-400 text-sm">${ingredient.quantity ? ingredient.quantity : "" }${ingredient.unit ? ingredient.unit : "" }</span>
+                                <span class="text-black text-sm flex flex-col">${key.ingredient}</span>
+                                <span class="text-gray-400 text-sm">${key.quantity ? key.quantity : "" }${key.unit ? key.unit : "" }</span>
                             </li>`
                         ).join("")}
                     </ul>

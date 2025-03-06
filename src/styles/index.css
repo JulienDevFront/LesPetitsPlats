@@ -6,3 +6,10 @@
   --font-anton: "Anton", sans-serif;
   --font-manrope: "Manrope", sans-serif;
 }
+
+.scrollbar-hidden {
+  scrollbar-width: none; /* Pour Firefox */
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Pour Chrome, Safari et Edge */
+}
