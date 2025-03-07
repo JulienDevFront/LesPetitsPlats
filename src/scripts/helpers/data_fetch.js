@@ -1,10 +1,10 @@
 /** JS.DOC ==>
- * - - -
+ * -^-^-
  * @module and @function data_fetch
- * - - -
+ * -^-^-
  * @description Fetches  data from a given  API path  and returns 
  * it as JSON. Handles errors and logs them if the request fails.
- * - - -
+ * -^-^-
  */
 export const data_fetch = async (path)  => {
     try {

@@ -701,6 +701,9 @@
   .bg-\[url\(\'\.\/\.\.\/assets\/images\/hero-header-img\.jpg\'\)\] {
     background-image: url('./../assets/images/hero-header-img.jpg');
   }
+  .bg-\[url\(\'\.\/assets\/icons\/loop-black-icon\.svg\'\)\] {
+    background-image: url('./assets/icons/loop-black-icon.svg');
+  }
   .bg-cover {
     background-size: cover;
   }
@@ -846,10 +849,31 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .hover\:bg-gray-800 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-800);
+      }
+    }
+  }
   .hover\:bg-yellow-300 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-yellow-300);
+      }
+    }
+  }
+  .hover\:bg-\[url\(\'\.\/assets\/icons\/loop-black-icon\.svg\'\)\] {
+    &:hover {
+      @media (hover: hover) {
+        background-image: url('./assets/icons/loop-black-icon.svg');
+      }
+    }
+  }
+  .hover\:fill-black {
+    &:hover {
+      @media (hover: hover) {
+        fill: var(--color-black);
       }
     }
   }

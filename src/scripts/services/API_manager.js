@@ -1,10 +1,10 @@
 /** JS.DOC ==>
- * - - -
+ * -^-^-
  * @module and @class API_manager
- * - - -
+ * -^-^-
  * @description  Singleton Pattern class that manages recipe data. It ensures only one 
  * instance is  created and allows access to a sorted,  unique list  of each category.
- * - - -
+ * -^-^-
  */
 export class API_manager {
   constructor(data) {
@@ -33,7 +33,7 @@ export class API_manager {
   get appliance_items(){
     const items = [...new Set(this._data.map(item => item.appliance))]
       .sort((a,b) => a.toLowerCase().localeCompare(b))
-    // console.log("See the items of the 'appliances' collection : ", items)
+    // console.log("See the items of the 'appliances' collection : ", items) 
     return items
   }
 

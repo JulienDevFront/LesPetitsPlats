@@ -1,11 +1,11 @@
 /** JS.DOC
- * - - -
+ * -^-^-
  * @module and @class ConstructorRecipeCard
- * - - -
+ * -^-^-
  * @description This class  is responsible for dynamically generating recipe cards in the DOM.
  * Each recipe card displays an image, a title, the preparation time, a brief description, and 
  * a list of ingredients. The generated card is inserted into the "#recipesSection" container.
- * - - -
+ * -^-^-
  */
 export class ConstructorRecipeCard {
     constructor({id, image, name, servings, ingredients, time, description, appliance, ustensils}) {

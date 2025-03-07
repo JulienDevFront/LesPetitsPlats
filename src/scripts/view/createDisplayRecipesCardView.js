@@ -10,8 +10,8 @@ import { ConstructorRecipeCard } from "../models/contructorRecipeCard.js"
  */
 export const createDisplayRecipesCardView = (containerTarget, items) => {
     const container = document.querySelector(containerTarget)
-
+    container.innerHTML = ""
     return items.length === 0 
         ? container.innerHTML = `<p>Aucune recette n'est disponible ...</p>`
-        : container.append(...items.map(item => new ConstructorRecipeCard(item).createRecipeCard()).join(""));
+        : container.append(...items.map(item => new ConstructorRecipeCard(item).createRecipeCard()).join(""))
 }
