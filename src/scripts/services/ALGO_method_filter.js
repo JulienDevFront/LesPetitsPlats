@@ -15,17 +15,16 @@ export const ALGO_method_filter = (inputTarget, buttonTarget, items) => {
 
     input.addEventListener("input", (e) => {
         const value = e.target.value.toLowerCase().trim();
-        const arr = Array.isArray(items._data) ? items._data : []
+        const arr = Array.isArray(items._data) ? items._data : console.error("The data passed as a parameter is not an array !")
 
         const filtered = arr.filter(item => 
             item.name.toLowerCase().includes(value) || 
-            item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(value)) ||
-            value.length > 3 && item.description.toLowerCase().includes(value)
+            item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(value))
         )
 
-        console.log("Valeur entrée :", value)
-        console.log("Items avant filtrage", arr)
-        console.log("Résultats filtrés :", filtered)
+        console.log("Value of input :", value)
+        console.log("Items to filter", arr)
+        console.log("Items filtered :", filtered)
     
         createDisplayRecipesCardView("#recipesSection", filtered)
         createSearchListView("#ingredientsList", tag_ingredient(filtered))
