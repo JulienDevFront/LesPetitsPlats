@@ -8,21 +8,21 @@
  * -^-^-
  */
 // Tag manager for ingredient ↴
-export const tag_ingredient = (itemsTarget)  => {
+export const getRecipesIngredients = (itemsTarget)  => {
   const items = [...new Set(itemsTarget.flatMap(item => item.ingredients.map(item => item.ingredient)))]
     .sort((a,b) => a.toLowerCase().localeCompare(b))
   // console.log("See the items of the 'ingredients' collection : ", items)
   return items
 }
 // Tag manager for appliance ↴
-export const tag_appliance = (itemsTarget) => {
+export const getRecipesAppliances = (itemsTarget) => {
   const items = [...new Set(itemsTarget.map(item => item.appliance))]
     .sort((a,b) => a.toLowerCase().localeCompare(b))
   // console.log("See the items of the 'appliances' collection : ", items) 
   return items
 }
 // Tag manager for ustensil ↴
-export const tag_ustensil = (itemsTarget) => {
+export const getRecipesUstensils = (itemsTarget) => {
   const items = [...new Set(itemsTarget.flatMap(item => item.ustensils))]
     .sort((a,b) => a.toLowerCase().localeCompare(b))
   // console.log("See the items of the 'ustensils' collection : ", items)
