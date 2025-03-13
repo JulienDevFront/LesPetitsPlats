@@ -7,14 +7,21 @@
  * target container exists in the DOM.
  * -^-^-
  */
-export const createSearchListView = (containerTarget, items) => {
-    if(!Array.isArray(items)) {
-        console.error("The module '@createSearchListView' wait an array as param! Encapsulate the data in an array and then pass it as a function parameter.")
-        return // If this is true => the execution of the script to stop!
-    }
+    export const createSearchListView = (containerTarget, items) => {
+        if (!Array.isArray(items)) {
+            console.error("The module '@createSearchListView' expects an array as a parameter.");
+            return;
+        }
     
-    const container = document.querySelector(containerTarget)
-    container.innerHTML = ""
-    const content = items.map(item => `<li class="p-4 text-ellipsis text-nowrap hover:bg-yellow-300"><button>${item}</button></li>`).join("")
-    container.innerHTML += content
-}
+        const container = document.querySelector(containerTarget);
+        container.innerHTML = "";
+        const content = items.map(item => `
+            <div class="flex w-full">
+                <input id="${item}" name="${item}" type="checkbox" class="peer hidden" />
+                <label for="${item}" class="w-full p-4 text-ellipsis text-nowrap hover:bg-yellow-300 peer-checked:bg-yellow-300 cursor-pointer flex items-center gap-2 overflow-x-hidden">${item.toLowerCase()}</label>
+            </div>
+        `).join("");
+        
+        container.innerHTML += content;
+    };
+    

@@ -29,51 +29,61 @@
             <img src="./assets/icons/loop-white-icon.svg" alt="Rechercher" />
           </button>
         </form>
+        <p id="msgForUser" class="font-anton  opacity-0 relative mt-8 rounded-xl bg-yellow-300 p-4">
+          <span class="absolute z-10 top-[-.5rem] left-8 rotate-45 w-4 h-4 bg-yellow-300"></span>
+          "Miamm! Miamm! Miamm! Pour effectuer une recherche, veuillez saisir 3 caractères au minimum."
+        </p>
       </section>
     </header>
     <!-- aside element / filter and sort search ingredients, devices, Utensils and display count recipes -->
     <aside class="pt-8 pl-24 pr-24 grid grid-cols-[auto_auto_auto_1fr] gap-16">
       <!-- section element / filter, sort and search by ingredients -->
-      <section class="w-48 bg-white rounded-xl">
+      <section class="w-48 h-80 bg-white rounded-xl  overflow-x-hidden">
         <header class="flex justify-between content-center pt-4 pb-4">
-          <h3 class="pl-4">Ingrédients</h3>
+          <h3 class="pl-4">Ingredients</h3>
           <img class="pr-4" src="./assets/icons/arrowDropDown.svg" alt="Dérouler" />
         </header>
-        <form class="pl-4 pr-4">
-          <label for="searchIngredients" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
-            <input id="searchIngredients" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchIngredients" />
-            <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
-          </label>
+        <form>
+          <fieldset class="pl-4 pr-4">
+            <label for="searchIngredients" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
+              <input id="searchIngredients" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchIngredients" />
+              <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
+            </label>
+          </fieldset>
+          <fieldset id="ingredientsList" class="mt-3 flex flex-col min-h-0 max-h-48 overflow-y-auto scrollbar-hidden"><!-- list generate witch JAVASCRIPT --></fieldset>
         </form>
-        <ul id="ingredientsList" class="mt-3 pb-4 flex flex-col h-80 overflow-auto scrollbar-hidden"><!-- list generate witch JAVASCRIPT --></ul>
       </section>
       <!-- section element / filter, sort and search by appliances -->
-      <section class="w-48 bg-white rounded-xl">
+      <section class="w-48 h-80 bg-white rounded-xl overflow-x-hidden">
         <header class="flex justify-between content-center pt-4 pb-4">
-          <h3 class="pl-4">Appareils</h3>
+          <h3 class="pl-4">Appliances</h3>
           <img class="pr-4" src="./assets/icons/arrowDropDown.svg" alt="Dérouler" />
         </header>
-        <form class="pl-4 pr-4">
-          <label for="searchAppliances" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
-            <input id="searchAppliances" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchAppliances" />
-            <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
-          </label>
+        <form>
+          <fieldset class="pl-4 pr-4">
+            <label for="searchAppliances" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
+              <input id="searchAppliances" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchAppliances" />
+              <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
+            </label>
+          </fieldset>
+          <fieldset id="appliancesList" class="mt-3 flex flex-col min-h-0 max-h-48 overflow-y-auto scrollbar-hidden"><!-- list generate witch JAVASCRIPT --></fieldset>
         </form>
-        <ul id="appliancesList" class="mt-3 pb-4 flex flex-col h-80 overflow-auto scrollbar-hidden"><!-- list generate witch JAVASCRIPT --></ul>
       </section>
       <!-- section element / filter, sort and search by utensils -->
-      <section class="w-48 bg-white rounded-xl">
+      <section class="w-48 h-80 bg-white rounded-xl overflow-x-hidden">
         <header class="flex justify-between content-center pt-4 pb-4">
           <h3 class="pl-4">Ustensiles</h3>
           <img class="pr-4" src="./assets/icons/arrowDropDown.svg" alt="Dérouler" />
         </header>
-        <form class="pl-4 pr-4">
-          <label for="searchUstensils" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
-            <input id="searchUstensils" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchUstensils" />
-            <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
-          </label>
+        <form>
+          <fieldset class="pl-4 pr-4">
+            <label for="searchUstensils" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
+              <input id="searchUstensils" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchUstensils" />
+              <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
+            </label>
+          </fieldset>
+          <fieldset id="ustensilsList" class="mt-3 flex flex-col min-h-0 max-h-48 overflow-y-auto scrollbar-hidden"><!-- list generate witch JAVASCRIPT --></fieldset>
         </form>
-        <ul id="ustensilsList" class="mt-3 pb-4 flex flex-col h-80 overflow-auto scrollbar-hidden"><!-- list generate witch JAVASCRIPT --></ul>
       </section>
       <!-- section element / display the number recipes / recipesCountSection is module in VIEW / dynamic interaction with JAVASCRIPT -->
       <section id="recipesCountSection" class="flex justify-end items-start">
@@ -83,6 +93,8 @@
         </h2>
       </section>
     </aside>
+    <!-- aside element /  -->
+     <aside id="containerTags"><!--  --></aside>
     <!-- main element / display the recipes generate dynamic with JAVASCRIPT -->
     <main id="recipesSection" class="grid grid-cols-3 gap-12 mt-14 pl-24 pr-24 w-full">
       <!-- article element / display a card recipe / card generate dynamic with JAVASCRIPT via a class in MODELS -->

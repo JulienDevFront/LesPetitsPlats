@@ -1,9 +1,7 @@
 import { data_fetch } from "./helpers/data_fetch.js"
 import { API_manager } from "./services/API_manager.js"
-import { createSearchListView } from "./view/createSearchListView.js"
-import { createCountRecipesView } from "./view/createCountRecipesView.js"
-import { createDisplayRecipesCardView } from "./view/createDisplayRecipesCardView.js"
-import {ALGO_method_filter } from "./services/ALGO_method_filter.js"
+import { createCardsInDomView } from "./view/createCardsInDomView.js"
+import { serviceOfSelectAndDisplayOfTags } from "./services/serviceOfSelectAndDisplayOfTags.js"
 /** JS.DOC ==>
  * -^-^-
  * @function App
@@ -16,15 +14,12 @@ const App = async () => {
     const API_path = "https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json"
     const API_import = await data_fetch(`${API_path}`)
     const API_instance = new API_manager(API_import)
-    // Init the of DOM with the datas import ↴
-    createSearchListView("#ingredientsList", API_instance.ingredient_items)
-    createSearchListView("#appliancesList", API_instance.appliance_items)
-    createSearchListView("#ustensilsList", API_instance.ustensil_items)
-    createDisplayRecipesCardView("#recipesSection", API_instance._data)
-    createCountRecipesView();
-    // Update DOM with form inputs with first demo algorithm ↴
-    ALGO_method_filter("#search","#searchMain", API_instance)
-    // Update DOM with form inputs with second demo algorithm ↴
+    // Init and Update DOM with form inputs with first demo algorithm ↴
+    createCardsInDomView("#search","#searchMain", API_instance._data)
+    // Update DOM with the select tags ↴
+    // serviceOfSelectAndDisplayOfTags("#ingredientsList")
+    // serviceOfSelectAndDisplayOfTags("#appliancesList")
+    // serviceOfSelectAndDisplayOfTags("#ustensilsList")
 };
 
 App();
