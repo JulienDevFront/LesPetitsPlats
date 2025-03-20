@@ -1,20 +1,20 @@
 /** JS.DOC ==>
  * -^-^-
- * @module and @class API_manager
+ * @module and @class serviceOfApiManager
  * -^-^-
  * @description  Singleton Pattern class that manages recipe data. It ensures only one 
  * instance is  created and allows access to a sorted,  unique list  of each category.
  * -^-^-
  */
-export class API_manager {
+export class serviceOfApiManager {
   constructor(data) {
     // Control block and logic of singleton pattern ↴
-    if (API_manager.exist) return API_manager.instance
+    if (serviceOfApiManager.exist) return serviceOfApiManager.instance
     if (!Array.isArray(data)) throw new Error("Data is not an array ! The Singleton_API expects an array.")
     // Variables and tools for the logic of singletion pattern ↴
     this._data = data
-    API_manager.exist = true
-    API_manager.instance = this
+    serviceOfApiManager.exist = true
+    serviceOfApiManager.instance = this
     console.log("Recipes API is 'INIT'!")
   }
 

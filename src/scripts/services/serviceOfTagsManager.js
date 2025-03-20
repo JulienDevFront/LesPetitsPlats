@@ -34,6 +34,6 @@ export const getTagsChecked = (containerTagCheckedTarget) => {
   const containerTagChecked = document.querySelector(containerTagCheckedTarget)
   const tags = Array.from(containerTagChecked.querySelectorAll("button"))
     .map(tag => tag.getAttribute("data-name"))
-  console.log("See the tags checked : ", tags)
+  // console.log("See the tags checked : ", tags)
   return tags
 }

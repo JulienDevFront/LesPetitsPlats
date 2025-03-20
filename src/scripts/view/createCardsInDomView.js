@@ -28,6 +28,7 @@ export const createCardsInDomView = (inputTarget, buttonTarget, items) => {
     createCountRecipesView();
     // Attached a listener of event ↴
     input.addEventListener("input", (e) => {
+
         const value = e.target.value.trim().toLowerCase()
         // Generate the DOM by default ↴
         createDisplayRecipesCardView("#recipesSection", items);
@@ -40,6 +41,7 @@ export const createCardsInDomView = (inputTarget, buttonTarget, items) => {
         // Import the module of algorithm of filter of recipes ↴
         if(value.length >= 3 ) {
             const filteredRecipes = serviceOfFilterOfRecipes(items, value);
+            console.log("See the value of the filtered recipes : ", filteredRecipes)
             // Create the differents views for generate the DOM with the dynamic values ↴
             createDisplayRecipesCardView("#recipesSection", filteredRecipes);
             createSearchListView("#ingredientsList", getRecipesIngredients(filteredRecipes));

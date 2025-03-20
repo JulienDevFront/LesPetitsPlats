@@ -9,7 +9,7 @@
  */
     export const createSearchListView = (containerTarget, items) => {
         if (!Array.isArray(items)) {
-            console.error("The module '@createSearchListView' expects an array as a parameter.");
+            console.error("The module 'createSearchListView' expects an array as a parameter.");
             return;
         }
     
