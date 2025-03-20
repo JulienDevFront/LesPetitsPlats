@@ -2,7 +2,8 @@ import { serviceOfFilterOfRecipes } from "../services/serviceOfFilterOfRecipes.j
 import { createDisplayRecipesCardView } from "./createDisplayRecipesCardView.js";
 import { createSearchListView } from "./createSearchListView.js";
 import { createCountRecipesView } from "./createCountRecipesView.js";
-import { getRecipesAppliances, getRecipesIngredients, getRecipesUstensils } from "../services/serviceOfTagsManager.js"
+import { createMessageManagerView } from "./createMessageManagerView.js";
+import { getRecipesAppliances, getRecipesIngredients, getRecipesUstensils, getTagsChecked } from "../services/serviceOfTagsManager.js"
 import { createDisplayForTagSelectView } from "./createDisplayForTagSelectView.js";
 /** JS.DOC ==>
  * -^-^-
@@ -19,6 +20,7 @@ export const createCardsInDomView = (inputTarget, buttonTarget, items) => {
     const button = document.querySelector(buttonTarget);
     // Generate the DOM by default ↴
     createDisplayRecipesCardView("#recipesSection", items);
+    createMessageManagerView(inputTarget, "#msgForUser");
     createSearchListView("#ingredientsList", getRecipesIngredients(items));
     createSearchListView("#appliancesList", getRecipesAppliances(items));
     createSearchListView("#ustensilsList", getRecipesUstensils(items));
@@ -27,9 +29,17 @@ export const createCardsInDomView = (inputTarget, buttonTarget, items) => {
     // Attached a listener of event ↴
     input.addEventListener("input", (e) => {
         const value = e.target.value.trim().toLowerCase()
+        // Generate the DOM by default ↴
+        createDisplayRecipesCardView("#recipesSection", items);
+        createMessageManagerView(inputTarget, "#msgForUser");
+        createSearchListView("#ingredientsList", getRecipesIngredients(items));
+        createSearchListView("#appliancesList", getRecipesAppliances(items));
+        createSearchListView("#ustensilsList", getRecipesUstensils(items));
+        createDisplayForTagSelectView("#ingredientsList", "#containerTags")
+        createCountRecipesView();
         // Import the module of algorithm of filter of recipes ↴
         if(value.length >= 3 ) {
-            const filteredRecipes = serviceOfFilterOfRecipes(items, value)
+            const filteredRecipes = serviceOfFilterOfRecipes(items, value);
             // Create the differents views for generate the DOM with the dynamic values ↴
             createDisplayRecipesCardView("#recipesSection", filteredRecipes);
             createSearchListView("#ingredientsList", getRecipesIngredients(filteredRecipes));

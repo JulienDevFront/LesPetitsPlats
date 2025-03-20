@@ -3,6 +3,7 @@
  * @module and @function tag_ingredient
  * @module and @function tag_appliance
  * @module and @function tag_ustensil
+ * @module and @function tag_checked
  * -^-^-
  * @description
  * -^-^-
@@ -27,4 +28,12 @@ export const getRecipesUstensils = (itemsTarget) => {
     .sort((a,b) => a.toLowerCase().localeCompare(b))
   // console.log("See the items of the 'ustensils' collection : ", items)
   return items
+}
+// Tag manager for tag checked ↴
+export const getTagsChecked = (containerTagCheckedTarget) => {
+  const containerTagChecked = document.querySelector(containerTagCheckedTarget)
+  const tags = Array.from(containerTagChecked.querySelectorAll("button"))
+    .map(tag => tag.getAttribute("data-name"))
+  console.log("See the tags checked : ", tags)
+  return tags
 }

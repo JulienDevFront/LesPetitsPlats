@@ -1,4 +1,5 @@
 import { createOfCheckedTagView } from "./createOfCheckedTagView.js";
+import { getTagsChecked } from "../services/serviceOfTagsManager.js";
 /** JS.DOC ==>
  * -^-^-
  * @module and @function serviceOfSelectAndDisplayOfTags
@@ -20,14 +21,19 @@ export const createDisplayForTagSelectView = (containerTagTarget, containerTagCh
             if(e.target.checked) {
                 const tagsCheckedView = createOfCheckedTagView(e.target.name)
                 containerTagChecked.appendChild(tagsCheckedView)
+                getTagsChecked("#containerTags")
                 // Event for can unchecked click the tags checked ↴
                 tagsCheckedView.addEventListener("click", (e) => {
                     tagsCheckedView.remove()
                     tag.checked = false
+                    getTagsChecked("#containerTags")
                 })
             }
             // If the tag is unchecked, create a view of the tag unchecked ↴
-           if(!e.target.checked) containerTagChecked.querySelector(`button[data-name="${e.target.name}"]`).remove()
+           if(!e.target.checked) {
+                containerTagChecked.querySelector(`button[data-name="${e.target.name}"]`).remove()
+                getTagsChecked("#containerTags")
+           }
         })
     })
 };
