@@ -3,6 +3,7 @@ import { createDisplayRecipesCardView } from "./createDisplayRecipesCardView.js"
 import { createSearchListView } from "./createSearchListView.js";
 import { createCountRecipesView } from "./createCountRecipesView.js";
 import { getRecipesAppliances, getRecipesIngredients, getRecipesUstensils } from "../services/serviceOfTagsManager.js"
+import { createDisplayForTagSelectView } from "./createDisplayForTagSelectView.js";
 /** JS.DOC ==>
  * -^-^-
  * @module and @function createCardsInDomView
@@ -21,6 +22,7 @@ export const createCardsInDomView = (inputTarget, buttonTarget, items) => {
     createSearchListView("#ingredientsList", getRecipesIngredients(items));
     createSearchListView("#appliancesList", getRecipesAppliances(items));
     createSearchListView("#ustensilsList", getRecipesUstensils(items));
+    createDisplayForTagSelectView("#ingredientsList", "#containerTags")
     createCountRecipesView();
     // Attached a listener of event ↴
     input.addEventListener("input", (e) => {
@@ -33,6 +35,7 @@ export const createCardsInDomView = (inputTarget, buttonTarget, items) => {
             createSearchListView("#ingredientsList", getRecipesIngredients(filteredRecipes));
             createSearchListView("#appliancesList", getRecipesAppliances(filteredRecipes));
             createSearchListView("#ustensilsList", getRecipesUstensils(filteredRecipes));
+            createDisplayForTagSelectView("#ingredientsList", "#containerTags")
             createCountRecipesView();
         }
     });

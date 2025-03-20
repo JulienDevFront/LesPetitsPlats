@@ -1,0 +1,33 @@
+import { createOfCheckedTagView } from "./createOfCheckedTagView.js";
+/** JS.DOC ==>
+ * -^-^-
+ * @module and @function serviceOfSelectAndDisplayOfTags
+ * -^-^-
+ * @description Manages  the display  of tags 
+ * checked and unchecked selected by the user
+ * -^-^-
+ */
+export const createDisplayForTagSelectView = (containerTagTarget, containerTagCheckedTarget) => {
+    // targets the tag container and stores all tags in a Array ↴
+    const containerTag = document.querySelector(containerTagTarget)
+    const tags = Array.from(containerTag.querySelectorAll("input[type='checkbox']"))
+    // targets the tag container checked and stores all tags checked in a Array ↴
+    const containerTagChecked = document.querySelector(containerTagCheckedTarget)
+    // Manage the display ↴
+    tags.forEach(tag => {
+        tag.addEventListener("change", (e) => {
+            // If the tag is checked, create a view of the tag checked ↴
+            if(e.target.checked) {
+                const tagsCheckedView = createOfCheckedTagView(e.target.name)
+                containerTagChecked.appendChild(tagsCheckedView)
+                // Event for can unchecked click the tags checked ↴
+                tagsCheckedView.addEventListener("click", (e) => {
+                    tagsCheckedView.remove()
+                    tag.checked = false
+                })
+            }
+            // If the tag is unchecked, create a view of the tag unchecked ↴
+           if(!e.target.checked) containerTagChecked.querySelector(`button[data-name="${e.target.name}"]`).remove()
+        })
+    })
+};
