@@ -8,10 +8,14 @@ import { ConstructorRecipeCard } from "../class/contructorRecipeCard.js"
  * DOM via a container parameter.
  * -^-^-
  */
-export const createDisplayRecipesCardView = (containerTarget, items) => {
+export const createDisplayRecipesCardView = (containerTarget, containerMsgRecipesNoFoundTarget, items) => {
     const container = document.querySelector(containerTarget)
+    const containerMsgRecipesNoFound = document.querySelector(containerMsgRecipesNoFoundTarget)
+
     container.innerHTML = ""
+    containerMsgRecipesNoFound.innerHTML = ""
+
     return items.length === 0 
-        ? container.innerHTML = `<p>Aucune recette n'est disponible ...</p>`
-        : container.append(...items.map(item => new ConstructorRecipeCard(item).createRecipeCard()).join(""))
+        ? containerMsgRecipesNoFound.innerHTML = `<p>Aucune recette n'est disponible ...</p>`
+        : container.append(items.map(item => new ConstructorRecipeCard(item).createRecipeCard()).join(""))
 }
