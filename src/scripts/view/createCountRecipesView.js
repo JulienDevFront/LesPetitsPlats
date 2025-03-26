@@ -9,12 +9,8 @@
 export const createCountRecipesView = () => {
     const container = document.querySelector("#recipesSection")
     
-    let numberOfRecipes = 0
-    for(const recipe of container.children) numberOfRecipes = numberOfRecipes + 1
+    let numberOfRecipes = container.children.length
 
-    const recipesCount = document.querySelector("#recipesCountSection__number")
-    recipesCount.textContent = numberOfRecipes
-
-    const string = document.querySelector("#recipesCountSection__repice")
-    if(numberOfRecipes <= 1)  string.textContent = string.textContent.slice(0, -1)
+    const recipesCount = document.querySelector("#recipesCountSection")
+    recipesCount.textContent = `${numberOfRecipes} recette${numberOfRecipes > 0 ? 's' : ''}`
 };

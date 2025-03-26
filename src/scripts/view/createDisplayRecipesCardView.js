@@ -1,4 +1,4 @@
-import { ConstructorRecipeCard } from "../models/contructorRecipeCard.js"
+import { ConstructorRecipeCard } from "../class/contructorRecipeCard.js"
 /** JS.DOC ==>
  * -^-^-
  * @module and @function createDisplayRecipesCardView
