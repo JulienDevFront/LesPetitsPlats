@@ -5,8 +5,9 @@ import { createMessageManagerView } from "./view/createMessageManagerView.js"
 import { createDisplayRecipesCardView } from "./view/createDisplayRecipesCardView.js"
 import { createCountRecipesView } from "./view/createCountRecipesView.js"
 
-import { service_researchRegister } from "./services/service_researchRegister.js"
 import { service_inputSearchManager } from "./services/service_inputSearchManager.js"
+import { service_tagSelectManager } from "./services/service_tagSelectManager.js"
+import { service_researchRegister } from "./services/service_researchRegister.js"
 /** JS.DOC ==>
  * -^-^-
  * @function App
@@ -28,7 +29,9 @@ const App = async () => {
 
     service_inputSearchManager("#searchMain","#btnSumbitForSearchMain", API_instance.data)
 
-    // console.log("See the module service_researchRegister on the folder index.js", service_researchRegister.researchRegister)
+    service_tagSelectManager(service_researchRegister, "ingredients")
+    service_tagSelectManager(service_researchRegister, "appliances")
+    service_tagSelectManager(service_researchRegister, "ustensils")
 
 };
 

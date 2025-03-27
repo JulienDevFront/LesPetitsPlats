@@ -13,7 +13,7 @@ export const service_inputSearchManager = (inputSearchTarget, btnSubmitTarget, d
     const button = document.querySelector(btnSubmitTarget);
     
     input.addEventListener("input", (e) => {
-        // processing of value user entered ↴
+        // 
         const value = e.target.value
         // 
         if (value.length >= 3) {
@@ -21,7 +21,7 @@ export const service_inputSearchManager = (inputSearchTarget, btnSubmitTarget, d
             const filteredRecipes = service_filterOfRecipes(dataDefault, service_researchRegister.text);
             console.log("Filtered recipes: ", filteredRecipes);
             //
-            createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound",filteredRecipes)
+            createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound", filteredRecipes)
             createCountRecipesView()
         } else {
             createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound", dataDefault);
@@ -30,4 +30,6 @@ export const service_inputSearchManager = (inputSearchTarget, btnSubmitTarget, d
     });
     // Event listener for the button click ↴
     button.addEventListener("click", (e) => e.preventDefault())
+    //
+    return service_researchRegister.text
 }
