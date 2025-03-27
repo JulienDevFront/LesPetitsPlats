@@ -40,7 +40,7 @@ export class ConstructorRecipeCard {
                                 <span class="text-gray-400 text-sm">${key.quantity ? key.quantity : "" }${key.unit ? key.unit : "" }</span>
                             </li>`
                         ).join("")}
-                    </ul>
+                        
                 </section>
             </article>
       `;

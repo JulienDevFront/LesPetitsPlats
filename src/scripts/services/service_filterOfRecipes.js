@@ -5,29 +5,30 @@
  * @description
  * -^-^-
  */
-export const service_filterOfRecipes = (items, valuesInputTarget, tagsIngredientTarget = [], tagsApplianceTarget = [], tagsUstensilTarget = []) => {
-    // Process the values before the filtering ↴
-    const values = valuesInputTarget
-    console.log("See the value of the function algo ", values)
+export const service_filterOfRecipes = (items, valuesInputTarget = [], tagsIngredientTarget = [], tagsApplianceTarget = [], tagsUstensilTarget = []) => {
+    //
+    const values = valuesInputTarget.map(v => v.toLowerCase().trim());
+    const tagsIngredient = tagsIngredientTarget.map(tag => tag.toLowerCase().trim());
+    const tagsAppliance = tagsApplianceTarget.map(tag => tag.toLowerCase().trim());
+    const tagsUstensil = tagsUstensilTarget.map(tag => tag.toLowerCase().trim());
 
-    // Process the tags before the filtering ↴
-    const tagsIngredient = tagsIngredientTarget
-    console.log("See the tags ingredient of the function algo ", tagsIngredient, typeof tagsIngredient)
-
-    const tagsAppliance = tagsApplianceTarget
-    console.log("See the tags appliance of the function algo ", tagsAppliance, typeof tagsAppliance)
-
-    const tagsUstensil = tagsUstensilTarget
-    console.log("See the tags ustensil of the function algo ", tagsUstensil, typeof tagsUstensil)
-
-    return items.filter(item =>
-        values.some(value =>
-            item.name.toLowerCase().includes(value.toLowerCase()) ||
-            item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(value.toLowerCase()))
-        ) 
-        // ||
-        // tagsIngredient.length > 0 ? tagsIngredient.some(tag => item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(tag.toLowerCase()))) : [] ||
-        // tagsAppliance.length > 0 ? tagsAppliance.some(tag => item.appliance.toLowerCase().includes(tag.toLowerCase())) : [] ||
-        // tagsAppliance.length > 0 ? tagsUstensil.some(tag => item.ustensils.some(ust => ust.toLowerCase().includes(tag.toLowerCase()))) : []
-    )
-}
+    return items.filter(item => {
+        //
+        const matchesSearch = values.length === 0 || 
+            values.some(value => 
+                item.name.toLowerCase().includes(value) ||
+                item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(value))
+            )
+        //
+        const matchesIngredients = tagsIngredient.length === 0 || 
+            tagsIngredient.every(tag => item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(tag)))
+        //
+        const matchesAppliance = tagsAppliance.length === 0 || 
+            tagsAppliance.some(tag => item.appliance.toLowerCase().includes(tag))
+        //
+        const matchesUstensils = tagsUstensil.length === 0 || 
+            tagsUstensil.every(tag => item.ustensils.some(ust => ust.toLowerCase().includes(tag)))
+        //
+        return matchesSearch && matchesIngredients && matchesAppliance && matchesUstensils;
+    });
+};

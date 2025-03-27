@@ -6,8 +6,6 @@ import { createDisplayRecipesCardView } from "./view/createDisplayRecipesCardVie
 import { createCountRecipesView } from "./view/createCountRecipesView.js"
 
 import { service_inputSearchManager } from "./services/service_inputSearchManager.js"
-import { service_tagSelectManager } from "./services/service_tagSelectManager.js"
-import { service_researchRegister } from "./services/service_researchRegister.js"
 /** JS.DOC ==>
  * -^-^-
  * @function App
@@ -26,13 +24,8 @@ const App = async () => {
     createMessageManagerView("#searchMain", "#msgForUser")
     createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound", API_instance.data)
     createCountRecipesView()
-
+    //
     service_inputSearchManager("#searchMain","#btnSumbitForSearchMain", API_instance.data)
-
-    service_tagSelectManager(service_researchRegister, "ingredients")
-    service_tagSelectManager(service_researchRegister, "appliances")
-    service_tagSelectManager(service_researchRegister, "ustensils")
-
 };
 
 App();
