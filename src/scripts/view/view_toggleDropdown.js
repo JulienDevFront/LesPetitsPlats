@@ -12,6 +12,6 @@ export const view_toggleDropdown = (containerDropdownTarget, contentDropdownTarg
     const containerDropdown = document.querySelector(containerDropdownTarget);
     const contentDropdown = document.querySelector(contentDropdownTarget);
     
-    // Add an event to toggle the toggle state :
+    // Add an event to toggle state :
     containerDropdown.addEventListener("click", (e) => contentDropdown.classList.toggle("hidden"));
 }
