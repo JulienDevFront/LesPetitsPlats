@@ -1,4 +1,5 @@
 import { ConstructorRecipeCard } from "../class/contructorRecipeCard.js"
+import { FactoryClassForTags } from "../class/factoryClassForTags.js"
 /** JS.DOC ==>
  * -^-^-
  * @module and @function createDisplayRecipesCardView
@@ -17,5 +18,5 @@ export const createDisplayRecipesCardView = (containerTarget, containerMsgRecipe
 
     return items.length === 0 
         ? containerMsgRecipesNoFound.innerHTML = `<p>Aucune recette n'est disponible ...</p>`
-        : container.append(items.map(item => new ConstructorRecipeCard(item).createRecipeCard()).join(""))
+        : container.append(items.map(item => new ConstructorRecipeCard(item).createRecipeCard()).join(""), new FactoryClassForTags(items))
 }

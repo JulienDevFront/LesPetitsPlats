@@ -1,8 +1,10 @@
 import { service_researchRegister } from "./service_researchRegister.js"
-import { service_filterOfRecipes } from "./service_filterOfRecipes.js";
-import { service_tagSelectManager } from "./service_tagSelectManager.js";
+import { service_filterOfRecipes } from "./service_filterOfRecipes.js"
+import { service_tagSelectManager } from "./service_tagSelectManager.js"
 import { createDisplayRecipesCardView } from "../view/createDisplayRecipesCardView.js"
-import { createCountRecipesView } from "../view/createCountRecipesView.js";
+import { createCountRecipesView } from "../view/createCountRecipesView.js"
+
+import { FactoryClassForTags } from "../class/factoryClassForTags.js"
 /** ==> 
  * -^-^-
  * @module and @function service_inputSearchManager
@@ -24,6 +26,8 @@ import { createCountRecipesView } from "../view/createCountRecipesView.js";
             console.log("See the recipes filtered :", filteredRecipes)
             //
             createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound", filteredRecipes)
+            const displayTags = new FactoryClassForTags(filteredRecipes)
+            console.log(displayTags)
             createCountRecipesView()
         };
         // 
@@ -35,7 +39,9 @@ import { createCountRecipesView } from "../view/createCountRecipesView.js";
             if (value.length >= 3)  service_researchRegister.text = [...new Set(value.toLowerCase().split(/[\s+]+/).filter(value => value.length >= 3))]
             else service_researchRegister.text = []
             //
-            updateRecipes();
+            updateRecipes()
+
+
         });
         //
         button.addEventListener("click", (e) => e.preventDefault());

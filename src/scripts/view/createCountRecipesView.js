@@ -7,10 +7,10 @@
  * -^-^-
  */
 export const createCountRecipesView = () => {
+    //
     const container = document.querySelector("#recipesSection")
-    
-    let numberOfRecipes = container.children.length
-
     const recipesCount = document.querySelector("#recipesCountSection")
+    //
+    let numberOfRecipes = container.children.length
     recipesCount.textContent = `${numberOfRecipes} recette${numberOfRecipes > 0 ? 's' : ''}`
 };
