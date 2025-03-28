@@ -15,7 +15,7 @@ export const view_toggleMsgInputSearch = (inputSearchTarget, msgContainerTarget)
     
     // Add an event to toggle state :
     input.addEventListener("input", (e) => {
-        if(e.target.value.trim("").length <= 2) msgContainer.classList.add("opacity-100")
-        if(e.target.value.trim("").length >= 3 || e.target.value.trim("").length === 0 ) msgContainer.classList.remove("opacity-100")
+        if(e.target.value.trim("").length > 0 && e.target.value.trim("").length < 3) msgContainer.classList.remove("hidden")
+        else msgContainer.classList.add("hidden")
     })
 }

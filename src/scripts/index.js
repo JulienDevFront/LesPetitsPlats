@@ -1,11 +1,10 @@
 import { utilsDataFetch } from "./utils/utilsDataFetch.js"
 import { service_ApiManager } from "./services/service_ApiManager.js"
-import { FactoryClassForTags } from "./class/factoryClassForTags.js"
-import { createMessageManagerView } from "./view/createMessageManagerView.js"
 import { createDisplayRecipesCardView } from "./view/createDisplayRecipesCardView.js"
 import { createCountRecipesView } from "./view/createCountRecipesView.js"
 
 import { view_toggleDropdown } from "./view/view_toggleDropdown.js"
+import { view_toggleMsgInputSearch } from "./view/view_toggleMsgInputSearch.js"
 
 import { service_inputSearchManager } from "./services/service_inputSearchManager.js"
 /** JS.DOC ==>
@@ -23,10 +22,12 @@ const App = async () => {
     // Init and Update DOM with form inputs with first demo algorithm ↴
     // const testTags = new FactoryClassForTags(API_instance.data)
     //
-    createMessageManagerView("#searchMain", "#msgForUser")
     view_toggleDropdown("#sectionTagIngredients__header", "#sectionTagIngredients__form")
     view_toggleDropdown("#sectionTagAppliances__header", "#sectionTagAppliances__form")
     view_toggleDropdown("#sectionTagUstensils__header", "#sectionTagUstensils__form")
+    
+    view_toggleMsgInputSearch("#searchMain", "#msgForUser")
+    view_toggleMsgInputSearch("#sectionTagIngredients__form__input", "#sectionTagIngredients__form__msgInput")
 
     createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound", API_instance.data)
     createCountRecipesView()
