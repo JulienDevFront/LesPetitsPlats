@@ -10,12 +10,13 @@
 export const view_toggleMsgInputSearch = (inputSearchTarget, msgContainerTarget) => {
 
     // Get the elements in the DOM for the toggle :
-    const input = document.querySelector(inputSearchTarget)
-    const msgContainer = document.querySelector(msgContainerTarget)
+    const input = document.querySelector(inputSearchTarget);
+    const msgContainer = document.querySelector(msgContainerTarget);
+    input.focus()
     
     // Add an event to toggle state :
     input.addEventListener("input", (e) => {
-        if(e.target.value.trim("").length > 0 && e.target.value.trim("").length < 3) msgContainer.classList.remove("hidden")
-        else msgContainer.classList.add("hidden")
+        if(e.target.value.trim("").length > 0 && e.target.value.trim("").length < 3) msgContainer.classList.remove("hidden");
+        else msgContainer.classList.add("hidden");
     })
 }

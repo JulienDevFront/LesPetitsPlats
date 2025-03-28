@@ -27,7 +27,11 @@ const App = async () => {
     view_toggleDropdown("#sectionTagUstensils__header", "#sectionTagUstensils__form")
     
     view_toggleMsgInputSearch("#searchMain", "#msgForUser")
+
     view_toggleMsgInputSearch("#sectionTagIngredients__form__input", "#sectionTagIngredients__form__msgInput")
+    view_toggleMsgInputSearch("#sectionTagAppliances__form__input", "#sectionTagAppliances__form__msgInput")
+    view_toggleMsgInputSearch("#sectionTagUstensils__form__input", "#sectionTagUstensils__form__msgInput")
+
 
     createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound", API_instance.data)
     createCountRecipesView()
