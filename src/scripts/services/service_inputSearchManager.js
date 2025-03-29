@@ -1,9 +1,7 @@
 import { service_researchRegister } from "./service_researchRegister.js"
 import { service_filterOfRecipes } from "./service_filterOfRecipes.js"
 import { service_tagSelectManager } from "./service_tagSelectManager.js"
-import { createDisplayRecipesCardView } from "../view/createDisplayRecipesCardView.js"
-import { createCountRecipesView } from "../view/createCountRecipesView.js"
-
+import { view_displayElementsWithSearch } from "../view/view_displayElementsWithSearch.js"
 import { FactoryClassForTags } from "../class/factoryClassForTags.js"
 /** ==> 
  * -^-^-
@@ -25,10 +23,9 @@ import { FactoryClassForTags } from "../class/factoryClassForTags.js"
             )
             console.log("See the recipes filtered :", filteredRecipes)
             //
-            createDisplayRecipesCardView("#recipesSection", "#msgRecipesNoFound", filteredRecipes)
+            view_displayElementsWithSearch("#recipesSection", "#msgRecipesNoFound", filteredRecipes)
             const displayTags = new FactoryClassForTags(filteredRecipes)
             console.log(displayTags)
-            createCountRecipesView()
         };
         // 
         ["ingredients", "appliances", "ustensils"].forEach(category => service_tagSelectManager(service_researchRegister, category, updateRecipes));
