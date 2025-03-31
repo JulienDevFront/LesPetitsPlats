@@ -1,11 +1,14 @@
 import { utilsDataFetch } from "./utils/utilsDataFetch.js"
+
+// import { service_researchRegister } from "./services/service_researchRegister.js"
 import { service_ApiManager } from "./services/service_ApiManager.js"
+import { service_inputSearchManager } from "./services/service_inputSearchManager.js"
 
 import { view_toggleDropdown } from "./view/view_toggleDropdown.js"
 import { view_toggleMsgInputSearch } from "./view/view_toggleMsgInputSearch.js"
 import { view_displayElementsWithSearch } from "./view/view_displayElementsWithSearch.js"
+import { service_tagResearchManager } from "./services/service_tagResearchManager.js"
 
-import { service_inputSearchManager } from "./services/service_inputSearchManager.js"
 /** JS.DOC ==>
  * -^-^-
  * @function App
@@ -30,9 +33,10 @@ const App = async () => {
     view_toggleMsgInputSearch("#sectionTagAppliances__form__input", "#sectionTagAppliances__form__msgInput")
     view_toggleMsgInputSearch("#sectionTagUstensils__form__input", "#sectionTagUstensils__form__msgInput")
     
-    
+
     //
-    service_inputSearchManager("#searchMain","#btnSumbitForSearchMain", API_instance.data)
+    service_inputSearchManager("#searchBar__input","#btnSumbitForSearchMain", API_instance.data)
+    service_tagResearchManager("#ingredientsList", "#sectionTagIngredients__form", "#sectionTagIngredients__form__input")
 };
 
 App();

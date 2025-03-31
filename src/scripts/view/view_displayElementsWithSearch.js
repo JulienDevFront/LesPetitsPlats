@@ -12,15 +12,18 @@ import { view_countRecipes } from "./view_countRecipes.js"
 export const view_displayElementsWithSearch = (containerTarget, containerMsgRecipesNoFoundTarget, items) => {
 
     // Get the elements in the DOM :
-    const container = document.querySelector(containerTarget)
-    const containerMsgRecipesNoFound = document.querySelector(containerMsgRecipesNoFoundTarget)
+    const container = document.querySelector(containerTarget);
+    const containerMsgRecipesNoFound = document.querySelector(containerMsgRecipesNoFoundTarget);
 
     // Reset the elements :
-    container.innerHTML = ""
-    containerMsgRecipesNoFound.innerHTML = ""
+    container.innerHTML = "";
+    containerMsgRecipesNoFound.innerHTML = "";
 
     // Display the elements :
     return items.length === 0 
         ? containerMsgRecipesNoFound.innerHTML = `<p>Aucune recette n'est disponible ...</p>`
-        : container.append(items.map(item => new ConstructorRecipeCard(item).createRecipeCard()).join(""), new FactoryClassForTags(items) ,view_countRecipes())
+        : container.append(items.map(
+            item => new ConstructorRecipeCard(item).createRecipeCard()).join("")), 
+            FactoryClassForTags(items), 
+            view_countRecipes();
 }

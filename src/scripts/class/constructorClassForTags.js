@@ -11,6 +11,7 @@ export class ConstructorClassForTags {
   static createSearchListView(item) {
     const container = document.createElement("div")
     container.className = "flex w-full"
+    container.dataset.tag = item
 
     const input = document.createElement("input")
     input.id = item
@@ -41,4 +42,12 @@ export class ConstructorClassForTags {
 
     return button;
   };
+
+  static createTagNoFound(value) {
+    const createElement = document.createElement("p");
+    createElement.className = "text-xs pt-2 p-4 text-justify text-gray-400";
+    createElement.textContent = `La recherche "${value}" ne correspond à aucun tag, veuillez recommencer.`;
+  
+    return createElement;
+  }
 }
