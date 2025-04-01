@@ -9,6 +9,11 @@ import { view_toggleMsgInputSearch } from "./view/view_toggleMsgInputSearch.js"
 import { view_displayElementsWithSearch } from "./view/view_displayElementsWithSearch.js"
 import { service_tagResearchManager } from "./services/service_tagResearchManager.js"
 
+
+    // test test test test test test 
+import { service_researchRegister } from "./services/service_researchRegister.js"
+import { view_displayTags } from "./view/view_displayTags.js"
+
 /** JS.DOC ==>
  * -^-^-
  * @function App
@@ -18,25 +23,36 @@ import { service_tagResearchManager } from "./services/service_tagResearchManage
  */
 const App = async () => {
     // Init the datas of App ↴
-    const API_path = "https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json"
-    const API_import = await utilsDataFetch(`${API_path}`)
-    const API_instance = new service_ApiManager(API_import)
+    const API_path = "https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json";
+    const API_import = await utilsDataFetch(`${API_path}`);
+    const API_instance = new service_ApiManager(API_import);
     // Init and Update DOM with form inputs with first demo algorithm ↴
     // const testTags = new FactoryClassForTags(API_instance.data)
     
-    view_displayElementsWithSearch("#recipesSection", "#msgRecipesNoFound", API_instance.data)
-    view_toggleDropdown("#sectionTagIngredients__header", "#sectionTagIngredients__form")
-    view_toggleDropdown("#sectionTagAppliances__header", "#sectionTagAppliances__form")
-    view_toggleDropdown("#sectionTagUstensils__header", "#sectionTagUstensils__form")
-    view_toggleMsgInputSearch("#searchBar__input", "#searchBar__msgInput")
-    view_toggleMsgInputSearch("#sectionTagIngredients__form__input", "#sectionTagIngredients__form__msgInput")
-    view_toggleMsgInputSearch("#sectionTagAppliances__form__input", "#sectionTagAppliances__form__msgInput")
-    view_toggleMsgInputSearch("#sectionTagUstensils__form__input", "#sectionTagUstensils__form__msgInput")
+    view_displayElementsWithSearch("#recipesSection", "#msgRecipesNoFound", API_instance.data);
+    view_toggleDropdown("#sectionTagIngredients__header", "#sectionTagIngredients__form");
+    view_toggleDropdown("#sectionTagAppliances__header", "#sectionTagAppliances__form");
+    view_toggleDropdown("#sectionTagUstensils__header", "#sectionTagUstensils__form");
+    view_toggleMsgInputSearch("#searchBar__input", "#searchBar__msgInput");
+    view_toggleMsgInputSearch("#sectionTagIngredients__form__input", "#sectionTagIngredients__form__msgInput");
+    view_toggleMsgInputSearch("#sectionTagAppliances__form__input", "#sectionTagAppliances__form__msgInput");
+    view_toggleMsgInputSearch("#sectionTagUstensils__form__input", "#sectionTagUstensils__form__msgInput");
     
 
     //
-    service_inputSearchManager("#searchBar__input","#btnSumbitForSearchMain", API_instance.data)
-    service_tagResearchManager("#ingredientsList", "#sectionTagIngredients__form", "#sectionTagIngredients__form__input")
+    service_inputSearchManager("#searchBar__input","#btnSumbitForSearchMain", API_instance.data);
+    service_tagResearchManager("#ingredientsList", "#sectionTagIngredients__form", "#sectionTagIngredients__form__input");
+    service_tagResearchManager("#appliancesList", "#sectionTagAppliances__form", "#sectionTagAppliances__form__input");
+    service_tagResearchManager("#ustensilsList", "#sectionTagUstensils__form", "#sectionTagUstensils__form__input");
+
+
+
+    // test test test test test test 
+    service_researchRegister.ingredients = API_instance.ingredient_items
+    console.log("Here : ",service_researchRegister.ingredients)
+
+    // test test test test test test
+    view_displayTags(service_researchRegister, "ingredients", "ustensils","appliances")
 };
 
 App();

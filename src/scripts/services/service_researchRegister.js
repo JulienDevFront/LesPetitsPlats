@@ -9,7 +9,7 @@
  */
 export const service_researchRegister = {
     text: [],
-    ingredients: [],
-    appliances: [],
-    ustensils: []
+    ingredients: ["Tomate", "Basilic", "Oignon"],
+    appliances: ["Four", "Mixeur", "Grille-pain"],
+    ustensils: ["Couteau", "Cuillère", "Fourchette"]
 }
