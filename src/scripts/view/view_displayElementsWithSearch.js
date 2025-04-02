@@ -1,5 +1,5 @@
 import { ConstructorRecipeCard } from "../class/contructorRecipeCard.js"
-import { FactoryClassForTags } from "../class/factoryClassForTags.js"
+import { view_displayTags } from "./view_displayTags.js"
 import { view_countRecipes } from "./view_countRecipes.js"
 /** JS.DOC ==>
  * -^-^-
@@ -24,6 +24,6 @@ export const view_displayElementsWithSearch = (containerTarget, containerMsgReci
         ? containerMsgRecipesNoFound.innerHTML = `<p>Aucune recette n'est disponible ...</p>`
         : container.append(items.map(
             item => new ConstructorRecipeCard(item).createRecipeCard()).join("")), 
-            FactoryClassForTags(items), 
+            view_displayTags(items), 
             view_countRecipes();
 }
