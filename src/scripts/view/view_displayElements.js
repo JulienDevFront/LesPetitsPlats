@@ -1,4 +1,4 @@
-import { ConstructorRecipeCard } from "../class/contructorRecipeCard.js"
+import { class_CardConstructor } from "../class/class_CardConstructor.js"
 import { view_displayTags } from "./view_displayTags.js"
 import { view_countRecipes } from "./view_countRecipes.js"
 /** JS.DOC ==>
@@ -22,7 +22,7 @@ export const view_displayElements = (targetRecipesContainer, targetMessageContai
     return targetItems.length === 0 
         ? messageContainer.innerHTML = `<p>Aucune recette n'est disponible ...</p>`
         : recipesContainer.append(targetItems.map(
-            item => new ConstructorRecipeCard(item).createRecipeCard()).join("")), 
+            item => new class_CardConstructor(item).createCard()).join("")), 
             view_displayTags(targetItems), 
             view_countRecipes();
 }
