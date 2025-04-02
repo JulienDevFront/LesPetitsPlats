@@ -1,22 +1,5 @@
 import { service_researchRegister } from "../data/data_RegisterSingleton.js"
-import { service_filterOfRecipes } from "./service_filterOfRecipes.js"
 import { service_tagSelectManager } from "./service_tagSelectManager.js"
-import { view_displayElements } from "../view/view_displayElements.js"
-
-export const updateRecipes = (dataDefault) => {
-    const filteredRecipes = service_filterOfRecipes(
-        dataDefault,
-        service_researchRegister.text,
-        service_researchRegister.ingredients,
-        service_researchRegister.appliances,
-        service_researchRegister.ustensils
-    )
-    console.log("See the recipes filtered :", filteredRecipes)
-    //
-    view_displayElements("#recipesSection", "#msgRecipesNoFound", filteredRecipes)
-    
-};
-
 /** ==> 
  * -^-^-
  * @module and @function service_inputSearchManager
