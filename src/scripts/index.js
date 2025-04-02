@@ -28,14 +28,11 @@ import { data_ApiSingleton } from "./data/data_ApiSingleton.js"
  */
 const App = async () => {
 
-    const API = new data_ApiSingleton(await data_ApiSingleton.import("https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json"));
+    // Create a singleton instance for API :
+    const apiSingleton = new data_ApiSingleton(await data_ApiSingleton.import("https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json"));
+    const apiData = apiSingleton.data;
+    console.log("Create a singleton instance for API :", apiData);
 
-    // Init the datas of App ↴
-    // const API_path = "https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json";
-    // const API_import = await utilsDataFetch(`${API_path}`);
-    // const API_instance = new service_ApiManager(API_import);
-    // // Init and Update DOM with form inputs with first demo algorithm ↴
-    // // const testTags = new FactoryClassForTags(API_instance.data)
     
     // view_displayElements("#recipesSection", "#msgRecipesNoFound", API_instance.data);
     // view_toggleDropdown("#sectionTagIngredients__header", "#sectionTagIngredients__form");
