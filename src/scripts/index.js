@@ -1,7 +1,7 @@
 import { utilsDataFetch } from "./utils/utilsDataFetch.js"
 
 // import { service_researchRegister } from "./services/service_researchRegister.js"
-import { service_ApiManager } from "./services/service_ApiManager.js"
+import { service_ApiManager } from "./data/data_ApiSingleton.js"
 import { service_inputSearchManager } from "./services/service_inputSearchManager.js"
 
 import { view_toggleDropdown } from "./view/view_toggleDropdown.js"
@@ -12,7 +12,7 @@ import { service_tagResearchManager } from "./services/service_tagResearchManage
 
 
     // test test test test test test 
-import { service_researchRegister } from "./services/service_researchRegister.js"
+import { service_researchRegister } from "./data/data_RegisterSingleton.js"
 
 /** JS.DOC ==>
  * -^-^-

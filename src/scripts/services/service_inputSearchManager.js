@@ -1,4 +1,4 @@
-import { service_researchRegister } from "./service_researchRegister.js"
+import { service_researchRegister } from "../data/data_RegisterSingleton.js"
 import { service_filterOfRecipes } from "./service_filterOfRecipes.js"
 import { service_tagSelectManager } from "./service_tagSelectManager.js"
 import { view_displayElements } from "../view/view_displayElements.js"
