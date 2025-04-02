@@ -20,6 +20,6 @@ export const service_updateRecipes = (initialData) => {
     );
     console.log("Filtered recipes:", filteredRecipes);
 
-// Update the displayed elements :
-view_displayElements("#recipesSection", "#msgRecipesNoFound", filteredRecipes);
+    // Update the displayed elements :
+    view_displayElements("#recipesSection", "#msgRecipesNoFound", filteredRecipes);
 };
