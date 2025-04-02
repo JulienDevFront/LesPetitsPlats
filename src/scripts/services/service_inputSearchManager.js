@@ -1,8 +1,7 @@
 import { service_researchRegister } from "./service_researchRegister.js"
 import { service_filterOfRecipes } from "./service_filterOfRecipes.js"
 import { service_tagSelectManager } from "./service_tagSelectManager.js"
-import { view_displayElementsWithSearch } from "../view/view_displayElementsWithSearch.js"
-import { FactoryClassForTags } from "../class/factoryClassForTags.js"
+import { view_displayElements } from "../view/view_displayElements.js"
 
 export const updateRecipes = (dataDefault) => {
     const filteredRecipes = service_filterOfRecipes(
@@ -14,8 +13,8 @@ export const updateRecipes = (dataDefault) => {
     )
     console.log("See the recipes filtered :", filteredRecipes)
     //
-    view_displayElementsWithSearch("#recipesSection", "#msgRecipesNoFound", filteredRecipes)
-    FactoryClassForTags(filteredRecipes)
+    view_displayElements("#recipesSection", "#msgRecipesNoFound", filteredRecipes)
+    
 };
 
 /** ==> 

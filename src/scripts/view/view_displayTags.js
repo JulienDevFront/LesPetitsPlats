@@ -1,4 +1,4 @@
-import { ConstructorClassForTags } from "../class/constructorClassForTags.js";
+import { class_TagConstructor } from "../class/class_TagConstructor.js";
 /** JS.DOC ==> 
  * -^-^-
  * @module and @function view_displayTags
@@ -9,26 +9,25 @@ import { ConstructorClassForTags } from "../class/constructorClassForTags.js";
  */
 export const view_displayTags = (targetItems) => {
 
-    const items = Array.from(targetItems);
-    if(!Array.isArray(items) || items.length === 0)return console.error("No items in ConstructorClassForTags");
-    console.log("@view_displayTags - Items received as a function parameter :", items);
+    if(!targetItems|| targetItems.length === 0) return console.error("No items pass in function parameter !");
+    console.log("@view_displayTags - Items received as a function parameter :", targetItems);
     
-    const containerTagsIngredients = document.querySelector("#ingredientsList");
-    containerTagsIngredients.innerHTML = "";
-    const ingredients = [...new Set(items.flatMap(i => i.ingredients.map(i => i.ingredient.toLowerCase())))].sort((a,b) => a.localeCompare(b));
-    ingredients.forEach(ingredient => containerTagsIngredients.append(ConstructorClassForTags.createSearchListView(ingredient)));
-    console.log("@view_displayTags - Ingredient tags display in element :", containerTagsIngredients);
+    const ingredientsContainer = document.querySelector("#ingredientsList");
+    ingredientsContainer.innerHTML = "";
+    const ingredients = [...new Set(targetItems.flatMap(i => i.ingredients.map(i => i.ingredient.toLowerCase())))].sort((a,b) => a.localeCompare(b));
+    ingredients.forEach(ingredient => ingredientsContainer.append(class_TagConstructor.createTag(ingredient)));
+    console.log("@view_displayTags - Ingredient tags display in element :", ingredientsContainer);
     
-    const containerTagsAppliances = document.querySelector("#appliancesList");
-    containerTagsAppliances.innerHTML = "";
-    const appliances = [...new Set(items.map(i => i.appliance.toLowerCase()))].sort((a,b) => a.localeCompare(b));
-    appliances.forEach(i => containerTagsAppliances.append(ConstructorClassForTags.createSearchListView(i)));
-    console.log("@view_displayTags - Appliances tags display in element :", containerTagsAppliances);
+    const appliancesContainer = document.querySelector("#appliancesList");
+    appliancesContainer.innerHTML = "";
+    const appliances = [...new Set(targetItems.map(i => i.appliance.toLowerCase()))].sort((a,b) => a.localeCompare(b));
+    appliances.forEach(i => appliancesContainer.append(class_TagConstructor.createTag(i)));
+    console.log("@view_displayTags - Appliances tags display in element :", appliancesContainer);
 
-    const containerTagsUstensils = document.querySelector("#ustensilsList");
-    containerTagsUstensils.innerHTML = "";
-    const ustensils = [...new Set(items.flatMap(i => i.ustensils.map(i => i.toLowerCase())))].sort((a,b) => a.localeCompare(b));
-    ustensils.forEach(i => containerTagsUstensils.append(ConstructorClassForTags.createSearchListView(i)));
-    console.log("@view_displayTags - Ustensils tags display in element :", containerTagsUstensils);
+    const ustensilsContainer = document.querySelector("#ustensilsList");
+    ustensilsContainer.innerHTML = "";
+    const ustensils = [...new Set(targetItems.flatMap(i => i.ustensils.map(i => i.toLowerCase())))].sort((a,b) => a.localeCompare(b));
+    ustensils.forEach(i => ustensilsContainer.append(class_TagConstructor.createTag(i)));
+    console.log("@view_displayTags - Ustensils tags display in element :", ustensilsContainer);
 };
 

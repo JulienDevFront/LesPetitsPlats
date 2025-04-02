@@ -1,6 +1,6 @@
 import { updateRecipes } from  './service_inputSearchManager.js'
 
-import { ConstructorClassForTags } from "../class/constructorClassForTags.js"
+import { class_TagConstructor } from "../class/class_TagConstructor.js"
 /** JS.DOC ==>
  * -^-^-
  * @module and @function service_tagSelectManager
@@ -23,7 +23,7 @@ export const service_tagSelectManager = (researchRegisterTarget, keysTarget, dat
             researchRegister[keysTarget].push(e.target.name);
             // const uniqueTags = [...new Set(researchRegister[keysTarget])];
     
-            const newTag = ConstructorClassForTags.createOfCheckedTagView(e.target.name);
+            const newTag = class_TagConstructor.createTagChecked(e.target.name);
             containerTagSelect.append(newTag);
         
         } else {
@@ -33,17 +33,18 @@ export const service_tagSelectManager = (researchRegisterTarget, keysTarget, dat
         updateRecipes(data);
     }));
     
-    
+    ///////// here here 
     containerTagSelect.addEventListener("click", (e) => {
         const tagButton = e.target.closest("button[data-name]");
         if (!tagButton) return;
-    
+        
         const tagName = tagButton.getAttribute("data-name");
-    
+        
         const tagCheckbox = containerTags.querySelector(`input[name="${tagName}"]`);
         if (tagCheckbox) tagCheckbox.checked = false;
-    
+        
         removeTag(tagName);
+        updateRecipes(data);
     });
     
     const removeTag = (tagName) => {

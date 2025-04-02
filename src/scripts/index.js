@@ -6,13 +6,13 @@ import { service_inputSearchManager } from "./services/service_inputSearchManage
 
 import { view_toggleDropdown } from "./view/view_toggleDropdown.js"
 import { view_toggleMsgInputSearch } from "./view/view_toggleMsgInputSearch.js"
-import { view_displayElementsWithSearch } from "./view/view_displayElementsWithSearch.js"
+import { view_displayElements } from "./view/view_displayElements.js"
+
 import { service_tagResearchManager } from "./services/service_tagResearchManager.js"
 
 
     // test test test test test test 
 import { service_researchRegister } from "./services/service_researchRegister.js"
-import { view_displayTags } from "./view/view_displayTags.js"
 
 /** JS.DOC ==>
  * -^-^-
@@ -29,7 +29,7 @@ const App = async () => {
     // Init and Update DOM with form inputs with first demo algorithm ↴
     // const testTags = new FactoryClassForTags(API_instance.data)
     
-    view_displayElementsWithSearch("#recipesSection", "#msgRecipesNoFound", API_instance.data);
+    view_displayElements("#recipesSection", "#msgRecipesNoFound", API_instance.data);
     view_toggleDropdown("#sectionTagIngredients__header", "#sectionTagIngredients__form");
     view_toggleDropdown("#sectionTagAppliances__header", "#sectionTagAppliances__form");
     view_toggleDropdown("#sectionTagUstensils__header", "#sectionTagUstensils__form");
@@ -50,9 +50,6 @@ const App = async () => {
     // test test test test test test 
     service_researchRegister.ingredients = API_instance.ingredient_items
     console.log("Here : ",service_researchRegister.ingredients)
-
-    // test test test test test test
-    view_displayTags(service_researchRegister, "ingredients", "ustensils","appliances")
 };
 
 App();

@@ -1,4 +1,4 @@
-import { ConstructorClassForTags } from "../class/constructorClassForTags.js";
+import { class_TagConstructor } from "../class/class_TagConstructor.js";
 /** JS.DOC
  * -^-^-
  * @module and @function service_tagResearchManager
@@ -20,18 +20,18 @@ export const service_tagResearchManager = (containerTagsTarget, formSearchTarget
 
             if(filter.length > 0){
                 containerTags.innerHTML = "";
-                filter.forEach(i => containerTags.append(ConstructorClassForTags.createSearchListView(i.dataset.tag)));
+                filter.forEach(i => containerTags.append(class_TagConstructor.createTag(i.dataset.tag)));
 
             } else {
                 containerTags.innerHTML = "";
-                containerTags.append(ConstructorClassForTags.createTagNoFound(value));
+                containerTags.append(class_TagConstructor.createTagNoFound(value));
 
                 if(value[0].length >= 8) inputSearch.value = "";
             }
 
         } else {
             containerTags.innerHTML = "";
-            tags.forEach(i => containerTags.append(ConstructorClassForTags.createSearchListView(i.dataset.tag)));
+            tags.forEach(i => containerTags.append(class_TagConstructor.createTag(i.dataset.tag)));
         }
     })
 
