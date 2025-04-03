@@ -1,17 +1,16 @@
 /** JS.DOC ==>
  * -^-^-
- * @module and @function view_toggleMsgInputSearch
+ * @module and @function view_toggleMessage
  * -^-^-
  * @description This function manages the display of a user message based on the length of the input value. It listens for the "input" event on 
  * the specified input element and shows a guidance message when the user input is less than 3 characters. The message is hidden when the input 
  * is either empty or has 3 or more characters
  * -^-^-
  */
-export const view_toggleMsgInputSearch = (inputSearchTarget, msgContainerTarget) => {
-
+export const view_toggleMessage = (targetInput, targetMessage) => {
     // Get the elements in the DOM for the toggle :
-    const input = document.querySelector(inputSearchTarget);
-    const msgContainer = document.querySelector(msgContainerTarget);
+    const input = document.querySelector(targetInput);
+    const msgContainer = document.querySelector(targetMessage);
     input.focus()
 
     // Add an event to toggle state :

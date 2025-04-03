@@ -7,7 +7,6 @@
  * -^-^-
  */
 export const view_toggleDropdown = (containerDropdownTarget, contentDropdownTarget) => {
-    
     // Get the elements in the DOM for the dropdown :
     const containerDropdown = document.querySelector(containerDropdownTarget);
     const contentDropdown = document.querySelector(contentDropdownTarget);

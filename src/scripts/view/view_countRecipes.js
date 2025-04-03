@@ -7,7 +7,6 @@
  * -^-^-
  */
 export const view_countRecipes = () => {
-    
     // Get the elements in the DOM :
     const container = document.querySelector("#recipesSection");
     const recipesCount = document.querySelector("#recipesCountSection");

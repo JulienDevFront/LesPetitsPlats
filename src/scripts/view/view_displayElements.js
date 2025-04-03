@@ -9,7 +9,6 @@ import { view_countRecipes } from "./view_countRecipes.js"
  * -^-^-
  */
 export const view_displayElements = (targetRecipesContainer, targetMessageContainer, targetItems) => {
-
     // Get the elements in the DOM :
     const recipesContainer = document.querySelector(targetRecipesContainer);
     const messageContainer= document.querySelector(targetMessageContainer);
