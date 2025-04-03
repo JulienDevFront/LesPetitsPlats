@@ -11,7 +11,6 @@ import { view_displayElements } from "../view/view_displayElements.js";
  * appliances,  ustensils) and  updates  the view  with the  filtered  list of  recipes.
  */
 export const service_updateRecipes = (initialData) => {
-
    // Filter recipes based on current search criteria :
    const filteredRecipes = service_filterOfRecipes(
         initialData, 
@@ -20,7 +19,7 @@ export const service_updateRecipes = (initialData) => {
         data_RegisterSingleton.appliances, 
         data_RegisterSingleton.ustensils
     );
-    console.log("@service_updateRecipes :", "\n - Filtered recipes:", filteredRecipes, "\n - And the register :", data_RegisterSingleton);
+    console.log("@service_updateRecipes : \n", "\n - Filtered recipes :", filteredRecipes, "\n - And the register :", data_RegisterSingleton);
 
     // Update the displayed elements :
     view_displayElements("#recipesSection", "#msgRecipesNoFound", filteredRecipes);
