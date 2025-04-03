@@ -1,22 +1,13 @@
 import { data_ApiSingleton } from "./data/data_ApiSingleton.js";
+import { data_RegisterSingleton } from "./data/data_RegisterSingleton.js";
+// -^-^-
 import { view_displayElements } from "./view/view_displayElements.js";
 import { view_toggleDropdown } from "./view/view_toggleDropdown.js";
 import { view_toggleMessage } from "./view/view_toggleMessage.js";
-
-
-
-
-// // import { service_researchRegister } from "./services/service_researchRegister.js"
-// import { service_ApiManager } from "./data/data_ApiSingleton.js"
-// import { service_inputSearchManager } from "./services/service_inputSearchManager.js"
-
-
-// import { service_tagResearchManager } from "./services/service_tagResearchManager.js"
-
-
-//     // test test test test test test 
-// import { service_researchRegister } from "./data/data_RegisterSingleton.js"
-
+// -^-^-
+import { service_manageTagSelect } from "./services/service_manageTagSelect.js";
+import { service_manageTagSearch } from "./services/service_manageTagSearch.js";
+import { service_manageInputSearch } from "./services/service_manageInputSearch.js";
 /** JS.DOC ==>
  * -^-^-
  * @function App
@@ -40,18 +31,16 @@ const App = async () => {
     view_toggleMessage("#sectionTagAppliances__form__input", "#sectionTagAppliances__form__msgInput");
     view_toggleMessage("#sectionTagUstensils__form__input", "#sectionTagUstensils__form__msgInput");
     
-
-    // //
-    // service_inputSearchManager("#searchBar__input","#btnSumbitForSearchMain", API_instance.data);
-    // service_tagResearchManager("#ingredientsList", "#sectionTagIngredients__form", "#sectionTagIngredients__form__input");
-    // service_tagResearchManager("#appliancesList", "#sectionTagAppliances__form", "#sectionTagAppliances__form__input");
-    // service_tagResearchManager("#ustensilsList", "#sectionTagUstensils__form", "#sectionTagUstensils__form__input");
-
-
-
-    // // test test test test test test 
-    // service_researchRegister.ingredients = API_instance.ingredient_items
-    // console.log("Here : ",service_researchRegister.ingredients)
+    // Manage of UI elements with the values :
+    service_manageTagSelect(data_RegisterSingleton, "ingredients", apiSingleton);
+    service_manageTagSelect(data_RegisterSingleton, "appliances", apiSingleton);
+    service_manageTagSelect(data_RegisterSingleton, "ustensils", apiSingleton);
+        // -^-^-
+    service_manageTagSearch("#ingredientsList", "#sectionTagIngredients__form", "#sectionTagIngredients__form__input", apiSingleton);
+    service_manageTagSearch("#appliancesList", "#sectionTagAppliances__form", "#sectionTagAppliances__form__input", apiSingleton);
+    service_manageTagSearch("#ustensilsList", "#sectionTagUstensils__form", "#sectionTagUstensils__form__input", apiSingleton);
+        // -^-^-
+    service_manageInputSearch("#searchBar__input", "#btnSumbitForSearchMain", apiSingleton);
 };
 
 App();

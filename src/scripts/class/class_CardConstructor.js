@@ -1,4 +1,4 @@
-/** JS.DOC
+/** JS.DOC ==>
  * -^-^-
  * @module and @class class_CardConstructor
  * -^-^-

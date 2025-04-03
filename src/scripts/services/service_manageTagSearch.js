@@ -1,5 +1,7 @@
 import { class_TagConstructor } from "../class/class_TagConstructor.js";
-/** JS.DOC
+import { service_manageTagSelect } from "./service_manageTagSelect.js";
+import { data_RegisterSingleton } from "../data/data_RegisterSingleton.js";
+/** JS.DOC ==>
  * -^-^-
  * @module and @function service_tagResearchManager
  * -^-^-
@@ -7,7 +9,7 @@ import { class_TagConstructor } from "../class/class_TagConstructor.js";
  * based  on  user input. It updates the  displayed tags  dynamically as  the  user types.
  * -^-^-
  */
-export const service_manageTagSearch = (targetTagContainer, targetFromSearch, targetInputSearch) => {
+export const service_manageTagSearch = (targetTagContainer, targetFromSearch, targetInputSearch, initialData) => {
     // Get the elements in the DOM :
     const tagContainer = document.querySelector(targetTagContainer);
     const tags = tagContainer.querySelectorAll(`div[data-tag]`);
@@ -26,14 +28,23 @@ export const service_manageTagSearch = (targetTagContainer, targetFromSearch, ta
             if(filter.length > 0){
                 tagContainer.innerHTML = "";
                 filter.forEach(i => tagContainer.append(class_TagConstructor.createTag(i.dataset.tag)));
+
+                //
+                ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
             } else {
                 tagContainer.innerHTML = "";
                 tagContainer.append(class_TagConstructor.createTagNoFound(value));
+
+                //
+                ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
             }
             
         } else {
             tagContainer.innerHTML = "";
             tags.forEach(i => tagContainer.append(class_TagConstructor.createTag(i.dataset.tag)));
+            
+            //
+            ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
         }
     })
 
