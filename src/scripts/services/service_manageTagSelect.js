@@ -21,13 +21,11 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
             targetRegister[targetCategory].push(e.target.name);
             const newTag = class_TagConstructor.createTagChecked(e.target.name);
             tagSelectContainer.append(newTag);
-        
+            service_updateRecipes(initialData);
+            
         } else {
             removeTag(e.target.name);
         };
-
-        //
-        service_updateRecipes(initialData);
     }));
     
     //
@@ -47,7 +45,10 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
     const removeTag = (tagName) => {
         targetRegister[targetCategory] = targetRegister[targetCategory].filter(tag => tag !== tagName);
         const tagToRemove = tagSelectContainer.querySelector(`[data-name="${tagName}"]`);
-        if (tagToRemove) tagToRemove.remove();
+        if (tagToRemove) {
+            tagToRemove.remove();
+            service_updateRecipes(initialData);
+        }
     };
 }    
 

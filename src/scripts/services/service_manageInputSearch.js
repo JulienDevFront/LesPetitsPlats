@@ -14,12 +14,19 @@ import { service_updateRecipes } from "./service_updateRecipes.js";
 
         // Add an event of type input and listen to the value :
         input.addEventListener("input", (e) => {
-            const value = e.target.value;
-
-            // Search triggered if first word has at least 3 characters :
-            value.length >= 3 
-                ? data_RegisterSingleton.text = [...new Set(value.toLowerCase().split(/[\s+]+/).filter(value => value.length > 2))]
-                : data_RegisterSingleton.text = [];
+            const value = e.target.value.toLowerCase().trim();
+            const result = value
+                .split("+")
+                .map(term => term.match(/\p{L}+/gu)?.join(" ").trim() || "")
+                .filter(term => term.length > 2);
+            console.log("@service_manageInputSearch", "\n - Value of the input :", value, "\n - Result of the seizure :", result);
+            
+            //Search triggered if first word has at least 3 characters :
+            if (result.length > 0 && result[0].length >= 3) {
+                data_RegisterSingleton.text = [...new Set(result)];
+            } else {
+                data_RegisterSingleton.text = [];
+            };
             
             // Update the recipes and the DOM :
             service_updateRecipes(initialData);
