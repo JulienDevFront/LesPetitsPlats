@@ -14,7 +14,7 @@ export class class_TagConstructor {
     tagContainer.dataset.tag = targetItem;
     
     tagContainer.innerHTML = `
-      <input id=${targetItem} name="${targetItem}" type="checkbox" class="peer hidden"/>
+      <input id="${targetItem}" name="${targetItem}" type="checkbox" class="peer hidden"/>
       <label for="${targetItem}" class="w-full p-4 text-ellipsis text-nowrap hover:bg-yellow-300 peer-checked:bg-yellow-300 cursor-pointer flex items-center gap-2 overflow-x-hidden">
         ${targetItem.toLowerCase()}
       </label>

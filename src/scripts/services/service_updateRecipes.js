@@ -1,4 +1,4 @@
-import { service_filterOfRecipes } from "./service_filterOfRecipes.js";
+import { service_filterRecipes } from "./service_filterRecipes.js";
 import { service_manageTagSelect } from "./service_manageTagSelect.js";
 // import { service_manageTagSearch } from "./service_manageTagSearch.js";
 import { data_RegisterSingleton } from "../data/data_RegisterSingleton.js";
@@ -12,7 +12,7 @@ import { view_displayElements } from "../view/view_displayElements.js";
  */
 export const service_updateRecipes = (initialData) => {
    // Filter recipes based on current search criteria :
-   const filteredRecipes = service_filterOfRecipes(
+   const filteredRecipes = service_filterRecipes(
         initialData, 
         data_RegisterSingleton.text, 
         data_RegisterSingleton.ingredients, 

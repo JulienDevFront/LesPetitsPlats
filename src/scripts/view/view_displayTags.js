@@ -17,7 +17,7 @@ export const view_displayTags = (targetItems) => {
     ingredientsContainer.innerHTML = "";
     const ingredients = [...new Set(targetItems.flatMap(i => i.ingredients.map(i => i.ingredient.toLowerCase())))].sort((a,b) => a.localeCompare(b));
     ingredients.forEach(ingredient => ingredientsContainer.append(class_TagConstructor.createTag(ingredient)));
-    console.log("@view_displayTags - Ingredient tags display in element :", ingredientsContainer);
+    // console.log("@view_displayTags - Ingredient tags display in element :", ingredientsContainer);
     
     //
     const appliancesContainer = document.querySelector("#appliancesList");

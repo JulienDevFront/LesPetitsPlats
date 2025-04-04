@@ -15,7 +15,7 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
 
     //
     tags.forEach(tag => tag.addEventListener("change", (e) => {
-        
+        console.log("@service_manageTagSelect - Tag selected :", e.target.name);
         //
         if (e.target.checked) {
             targetRegister[targetCategory].push(e.target.name);
@@ -47,7 +47,7 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
         const tagToRemove = tagSelectContainer.querySelector(`[data-name="${tagName}"]`);
         if (tagToRemove) {
             tagToRemove.remove();
-            service_updateRecipes(initialData);
+            // service_updateRecipes(initialData);
         }
     };
 }    
