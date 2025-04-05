@@ -10,6 +10,8 @@ import { class_TagConstructor } from "../class/class_TagConstructor.js";
 export const service_manageTagSelect = (targetRegister, targetCategory, initialData) => {
     // Get the elements in the DOM :
     const tagSelectContainer = document.querySelector("#containerTags");
+    const tagSelect = tagSelectContainer.querySelectorAll("button[data-name]");
+    
     const tagContainer = document.querySelector(`#${targetCategory}List`);
     const tags= Array.from(tagContainer.querySelectorAll("input[type='checkbox']"));
 
@@ -29,26 +31,22 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
     }));
     
     //
-    tagSelectContainer.addEventListener("click", (e) => {
-        const tag = e.target.closest("button[data-name]");
-        const tagName = tag.getAttribute("data-name");
-        
-        //
-        const tagSelectInList = tagContainer.querySelector(`input[name="${tagName}"]`);
-        if (tagSelectInList) tagSelectInList.checked = false;
-        
-        //
-        removeTag(tagName);
-        service_updateRecipes(initialData);
+    tagSelect.forEach(button => {
+        button.addEventListener("click", (e) => {
+            const tagName = button.getAttribute("data-name");
+            const tagInList = tagContainer.querySelector(`input[name="${tagName}"]`);
+            if (tagInList) tagInList.checked = false;
+    
+            removeTag(tagName);
+            service_updateRecipes(initialData);
+        });
     });
+    
     
     const removeTag = (tagName) => {
         targetRegister[targetCategory] = targetRegister[targetCategory].filter(tag => tag !== tagName);
         const tagToRemove = tagSelectContainer.querySelector(`[data-name="${tagName}"]`);
-        if (tagToRemove) {
-            tagToRemove.remove();
-            // service_updateRecipes(initialData);
-        }
+        if (tagToRemove) tagToRemove.remove();
     };
 }    
 

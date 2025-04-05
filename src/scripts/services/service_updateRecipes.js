@@ -3,6 +3,7 @@ import { service_manageTagSelect } from "./service_manageTagSelect.js";
 // import { service_manageTagSearch } from "./service_manageTagSearch.js";
 import { data_RegisterSingleton } from "../data/data_RegisterSingleton.js";
 import { view_displayElements } from "../view/view_displayElements.js";
+import { view_toggleTagChecked } from "../view/view_toggleTagChecked.js";
 /** JS.DOC ==>
  * -^-^-
  * @module and @function service_updateRecipes
@@ -26,4 +27,5 @@ export const service_updateRecipes = (initialData) => {
 
     // // Manage of UI elements with the values :
     ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
+    ["ingredients", "appliances", "ustensils"].forEach(category => view_toggleTagChecked(data_RegisterSingleton, category, `#${category}List`));
 };
