@@ -1,6 +1,5 @@
 import { service_filterRecipes } from "./service_filterRecipes.js";
 import { service_manageTagSelect } from "./service_manageTagSelect.js";
-// import { service_manageTagSearch } from "./service_manageTagSearch.js";
 import { data_RegisterSingleton } from "../data/data_RegisterSingleton.js";
 import { view_displayElements } from "../view/view_displayElements.js";
 import { view_toggleTagChecked } from "../view/view_toggleTagChecked.js";

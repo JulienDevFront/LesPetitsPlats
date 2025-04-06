@@ -18,6 +18,7 @@ export const service_filterRecipes = (items, valuesInputTarget = [], tagsIngredi
             values.some(value => 
                 item.name.toLowerCase().includes(value) ||
                 item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(value))
+                //description
             );
         //
         const matchesIngredients = tagsIngredient.length === 0 || 

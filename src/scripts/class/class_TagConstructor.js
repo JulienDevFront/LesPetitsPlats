@@ -24,7 +24,7 @@ export class class_TagConstructor {
 
   static createTagChecked(targetItem) {
     const tagCheckedContainer = document.createElement("button");
-    tagCheckedContainer.className = "p-4 flex gap-x-4 bg-yellow-300 rounded-xl font-manrope";
+    tagCheckedContainer.className = "p-4 flex gap-x-4 bg-yellow-300 rounded-xl font-manrope cursor-pointer";
     tagCheckedContainer.setAttribute("data-name", targetItem);
 
     tagCheckedContainer.innerHTML = `

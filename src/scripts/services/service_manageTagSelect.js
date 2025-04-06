@@ -16,7 +16,7 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
     const tags= Array.from(tagContainer.querySelectorAll("input[type='checkbox']"));
 
     //
-    tags.forEach(tag => tag.addEventListener("change", (e) => {
+    tags.forEach(tag => tag.addEventListener("click", (e) => {
         console.log("@service_manageTagSelect - Tag selected :", e.target.name);
         //
         if (e.target.checked) {
