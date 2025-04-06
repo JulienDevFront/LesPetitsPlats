@@ -1,4 +1,4 @@
-import { class_TagConstructor } from "../class/class_TagConstructor.js";
+import { component_TagConstructor } from "../components/component_TagConstructor.js";
 import { service_manageTagSelect } from "./service_manageTagSelect.js";
 import { data_RegisterSingleton } from "../data/data_RegisterSingleton.js";
 /** JS.DOC ==>
@@ -27,13 +27,13 @@ export const service_manageTagSearch = (targetTagContainer, targetFromSearch, ta
             // Displays the tags found or not :
             if(filter.length > 0){
                 tagContainer.innerHTML = "";
-                filter.forEach(i => tagContainer.append(class_TagConstructor.createTag(i.dataset.tag)));
+                filter.forEach(i => tagContainer.append(component_TagConstructor.createTag(i.dataset.tag)));
 
                 //
                 ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
             } else {
                 tagContainer.innerHTML = "";
-                tagContainer.append(class_TagConstructor.createTagNoFound(value));
+                tagContainer.append(component_TagConstructor.createTagNoFound(value));
 
                 //
                 ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
@@ -41,7 +41,7 @@ export const service_manageTagSearch = (targetTagContainer, targetFromSearch, ta
             
         } else {
             tagContainer.innerHTML = "";
-            tags.forEach(i => tagContainer.append(class_TagConstructor.createTag(i.dataset.tag)));
+            tags.forEach(i => tagContainer.append(component_TagConstructor.createTag(i.dataset.tag)));
             
             //
             ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));

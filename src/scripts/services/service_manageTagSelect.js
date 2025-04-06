@@ -1,5 +1,5 @@
 import { service_updateRecipes } from  "./service_updateRecipes.js";
-import { class_TagConstructor } from "../class/class_TagConstructor.js";
+import { component_TagConstructor } from "../components/component_TagConstructor.js";
 /** JS.DOC ==>
  * -^-^-
  * @module and @function service_manageTagSelect
@@ -21,7 +21,7 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
         //
         if (e.target.checked) {
             targetRegister[targetCategory].push(e.target.name);
-            const newTag = class_TagConstructor.createTagChecked(e.target.name);
+            const newTag = component_TagConstructor.createTagChecked(e.target.name);
             tagSelectContainer.append(newTag);
             service_updateRecipes(initialData);
             

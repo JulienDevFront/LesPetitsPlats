@@ -1,11 +1,12 @@
 /** JS.DOC ==>
  * -^-^-
- * @module and @function class_TagConstructor
+ * @module and @function component_TagConstructor
  * -^-^-
- * @description
+ * @description This class  is responsible  for dynamically 
+ * generating tags in the DOM regardless of the categories.
  * -^-^-
  */
-export class class_TagConstructor {
+export class component_TagConstructor {
   constructor() {}
 
   static createTag(targetItem) {
