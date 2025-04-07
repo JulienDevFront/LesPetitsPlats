@@ -12,6 +12,7 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
     const tagSelectContainer = document.querySelector("#containerTags");
     const tagSelect = tagSelectContainer.querySelectorAll("button[data-name]");
     
+    //
     const tagContainer = document.querySelector(`#${targetCategory}List`);
     const tags= Array.from(tagContainer.querySelectorAll("input[type='checkbox']"));
 
@@ -19,14 +20,16 @@ export const service_manageTagSelect = (targetRegister, targetCategory, initialD
     tags.forEach(tag => tag.addEventListener("click", (e) => {
         console.log("@service_manageTagSelect - Tag selected :", e.target.name);
         //
-        if (e.target.checked) {
+        if (e.target && !targetRegister[targetCategory].includes(e.target.name)) {
             targetRegister[targetCategory].push(e.target.name);
             const newTag = component_TagConstructor.createTagChecked(e.target.name);
             tagSelectContainer.append(newTag);
             service_updateRecipes(initialData);
-            
+            console.log("Add :", targetRegister[targetCategory])
         } else {
             removeTag(e.target.name);
+            service_updateRecipes(initialData);
+            console.log("Delete :", targetRegister[targetCategory])
         };
     }));
     

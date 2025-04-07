@@ -23,7 +23,7 @@ export const service_updateRecipes = (initialData) => {
 
     // Update the displayed elements :
     view_displayElements("#recipesSection", "#msgRecipesNoFound", filteredRecipes);
-
+    
     // // Manage of UI elements with the values :
     ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
     ["ingredients", "appliances", "ustensils"].forEach(category => view_toggleTagChecked(data_RegisterSingleton, category, `#${category}List`));
