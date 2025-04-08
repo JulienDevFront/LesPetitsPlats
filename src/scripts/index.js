@@ -20,7 +20,7 @@ const App = async () => {
     const apiSingleton = new data_ApiSingleton(await data_ApiSingleton.import("https://juliendevfront.github.io/LesPetitsPlats/public/API_recipes.json")).data;
     
     // Initialize UI elements :
-    view_displayElements("#recipesSection", "#msgRecipesNoFound", apiSingleton);
+    ["ingredients", "appliances", "ustensils"].forEach(category => view_displayElements("#recipesSection", "#msgRecipesNoFound", category, apiSingleton));
         // -^-^-
     view_toggleDropdown("#sectionTagIngredients__header", "#sectionTagIngredients__form");
     view_toggleDropdown("#sectionTagAppliances__header", "#sectionTagAppliances__form");

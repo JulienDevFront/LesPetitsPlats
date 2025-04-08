@@ -38,7 +38,7 @@
     <!-- aside element / filter and sort search ingredients, devices, Utensils and display count recipes -->
     <aside class="pt-8 pl-24 pr-24 grid grid-cols-[auto_auto_auto_1fr] grid-auto-rows-min gap-16 place-items-start">
       <!-- section element / filter, sort and search by ingredients -->
-      <section id="sectionTagIngredients" class="w-48 h-auto bg-white rounded-xl  overflow-x-hidden">
+      <section class="w-48 h-auto bg-white rounded-xl  overflow-x-hidden">
         <header id="sectionTagIngredients__header" class="flex justify-between content-center pt-4 pb-4">
           <h3 class="pl-4">Ingredients</h3>
           <img class="pr-4" src="./assets/icons/arrowDropDown.svg" alt="Dérouler" />
@@ -96,13 +96,17 @@
           <span id="recipesCountSection"></span>
       </h2>
     </aside>
+    <!--  -->
+    <aside id="messageRecipesNoFound" class="flex flex-col gap-4 m-24 p-8 bg-white rounded-xl">
+        <h3 class="font-anton font-bold text-5xl uppercase">oups !</h3>
+        <p class="font-manrope">Aucune recette trouver avec la recherche "<span id="messageRecipesNoFound__value" class="font-bold"></span>", veuillez effectuer une nouvelle recherche.</p>
+    </aside>
     <!-- aside element /  -->
     <aside id="containerTags" class="flex gap-x-4 pt-8 pl-24 pr-24 "><!--  --></aside>
     <!-- main element / display the recipes generate dynamic with JAVASCRIPT -->
     <main id="recipesSection" class="grid grid-cols-3 gap-12 mt-14 pl-24 pr-24 w-full">
       <!-- article element / display a card recipe / card generate dynamic with JAVASCRIPT via a class in MODELS -->
     </main>
-    <aside id="msgRecipesNoFound"></aside>
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
