@@ -1,4 +1,5 @@
 import { service_filterRecipes } from "./service_filterRecipes.js";
+import { service_manageTagSearch } from "./service_manageTagSearch.js";
 import { service_manageTagSelect } from "./service_manageTagSelect.js";
 import { data_RegisterSingleton } from "../data/data_RegisterSingleton.js";
 import { view_displayElements } from "../view/view_displayElements.js";
@@ -20,11 +21,12 @@ export const service_updateRecipes = (initialData) => {
         data_RegisterSingleton.ustensils
     );
     console.log("@service_updateRecipes : \n", "\n - Filtered recipes :", filteredRecipes, "\n - And the register :", data_RegisterSingleton);
-
-    // Update the displayed elements :
-    ["ingredients", "appliances", "ustensils"].forEach(category => view_displayElements("#recipesSection", "#msgRecipesNoFound", category, filteredRecipes));
     
     // Manage of UI elements with the values :
     ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
     ["ingredients", "appliances", "ustensils"].forEach(category => view_toggleTagChecked(data_RegisterSingleton, category, `#${category}List`));
+    ["ingredients", "appliances", "ustensils"].forEach(category => view_displayElements("#recipesSection", "#msgRecipesNoFound", category, filteredRecipes));
+    service_manageTagSearch("#ingredientsList", "#sectionTagIngredients__form", "#sectionTagIngredients__form__input", filteredRecipes);
+    service_manageTagSearch("#appliancesList", "#sectionTagAppliances__form", "#sectionTagAppliances__form__input", filteredRecipes);
+    service_manageTagSearch("#ustensilsList", "#sectionTagUstensils__form", "#sectionTagUstensils__form__input", filteredRecipes);
 }
