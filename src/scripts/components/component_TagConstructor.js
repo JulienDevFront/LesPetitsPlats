@@ -11,7 +11,7 @@ export class component_TagConstructor {
 
   static createTag(targetItem) {
     const tagContainer = document.createElement("div");
-    tagContainer.className = "flex w-full";
+    tagContainer.className = "flex w-48";
     tagContainer.dataset.tag = targetItem;
     
     tagContainer.innerHTML = `
@@ -25,12 +25,12 @@ export class component_TagConstructor {
 
   static createTagSelectedInList(targetItem) {
     const tagContainer = document.createElement("div");
-    tagContainer.className = "flex w-full items-center justify-between gap-2 pr-4 bg-yellow-300";
+    tagContainer.className = "flex w-48 truncate text-ellipsis items-center justify-between gap-2 pr-4 bg-yellow-300";
     tagContainer.dataset.tag = targetItem;
     
     tagContainer.innerHTML = `
       <input id="${targetItem}" name="${targetItem}" type="checkbox" class="hidden"/>
-      <label for="${targetItem}" class="w-full p-4 text-ellipsis text-nowrap font-bold">
+      <label for="${targetItem}" class="flex-auto p-4 truncate text-ellipsis text-nowrap font-bold">
         ${targetItem.toLowerCase()} 
       </label>
       <img data-tag="${targetItem}" class="cursor-pointer" src="./assets/icons/cross-button-tag-list-icon.svg" alt="Désélectionnez le tag"/>
