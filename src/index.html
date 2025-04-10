@@ -23,7 +23,7 @@
         </h1>
         <!-- form element / filter, sort and search by recipes / filter generate with JAVASCRIPT -->
         <form id="searchBar" class="mt-8 flex gap-2 rounded-xl bg-white p-2.5">
-          <label for="search" class="sr-only">Rechercher une recette</label>
+          <label for="searchBar__input" class="sr-only">Rechercher une recette</label>
           <input id="searchBar__input" class="flex-auto rounded-xl px-8 outline-0" type="search" placeholder="Rechercher une recette, un ingrédient..." />
           <button id="btnSumbitForSearchMain" class="rounded-xl bg-black p-3 transition-colors hover:bg-yellow-300" title="Rechercher" type="submit">
             <img src="./assets/icons/loop-white-icon.svg" alt="Rechercher" />
@@ -40,12 +40,12 @@
       <!-- section element / filter, sort and search by ingredients -->
       <section class="w-48 h-auto bg-white rounded-xl  overflow-x-hidden">
         <header id="sectionTagIngredients__header" class="flex justify-between content-center pt-4 pb-4">
-          <h3 class="pl-4">Ingredients</h3>
+          <h3 class="pl-4">Ingrédients</h3>
           <img class="pr-4" src="./assets/icons/arrowDropDown.svg" alt="Dérouler" />
         </header>
         <form id="sectionTagIngredients__form" class="hidden">
           <fieldset class="pl-4 pr-4">
-            <label for="searchIngredients" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
+            <label class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
               <input id="sectionTagIngredients__form__input" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchIngredients" />
               <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
             </label>
@@ -58,12 +58,12 @@
       <!-- section element / filter, sort and search by appliances -->
       <section class="w-48 bg-white rounded-xl overflow-x-hidden">
         <header id="sectionTagAppliances__header" class="flex justify-between content-center pt-4 pb-4">
-          <h3 class="pl-4">Appliances</h3>
+          <h3 class="pl-4">Appareils</h3>
           <img class="pr-4" src="./assets/icons/arrowDropDown.svg" alt="Dérouler" />
         </header>
         <form id="sectionTagAppliances__form" class="hidden">
           <fieldset class="pl-4 pr-4">
-            <label for="searchAppliances" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
+            <label class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
               <input id="sectionTagAppliances__form__input" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchAppliances" />
               <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
             </label>
@@ -81,7 +81,7 @@
         </header>
         <form id="sectionTagUstensils__form" class="hidden">
           <fieldset class="pl-4 pr-4">
-            <label for="searchUstensils" class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
+            <label class="flex w-full p-2.5 outline-1 rounded-xs outline-gray-300">
               <input id="sectionTagUstensils__form__input" class="w-full outline-0 text-gray-400 pr-2.5" type="search" name="searchUstensils" />
               <img src="./assets/icons/loop-placeholder-input-search.svg" alt="Rechercher" />
             </label>
