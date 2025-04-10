@@ -6,11 +6,15 @@
  * drop-down menu with the help of a toggle
  * -^-^-
  */
-export const view_toggleDropdown = (containerDropdownTarget, contentDropdownTarget) => {
+export const view_toggleDropdown = (targetDropdownContainer, targetDropdownContent) => {
     // Get the elements in the DOM for the dropdown :
-    const containerDropdown = document.querySelector(containerDropdownTarget);
-    const contentDropdown = document.querySelector(contentDropdownTarget);
-    
+    const dropdownContainer = document.querySelector(targetDropdownContainer);
+    const dropdownContent = document.querySelector(targetDropdownContent);
+    const dropdownIcon = dropdownContainer.querySelector("img");
+
     // Add an event to toggle state :
-    containerDropdown.addEventListener("click", (e) => contentDropdown.classList.toggle("hidden"));
+    dropdownContainer.addEventListener("click", (e) => {
+        dropdownContent.classList.toggle("hidden")
+        dropdownIcon.classList.toggle("rotate-180");
+    });
 }

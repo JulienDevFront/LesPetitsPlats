@@ -41,11 +41,6 @@ const App = async () => {
     service_manageTagSearch("#ustensilsList", "#sectionTagUstensils__form", "#sectionTagUstensils__form__input", apiSingleton);
         // -^-^-
     service_manageInputSearch("#searchBar__input", "#btnSumbitForSearchMain", apiSingleton);
-
-    // -^-^-
-    const arr = ["apple", "banana", ["apple", "banana", "orange"]];
-    const filter = [...new Set(arr.flat())];
-    console.log(filter.some(i => i.includes("banana"))); // 0
 };
 
 App();
