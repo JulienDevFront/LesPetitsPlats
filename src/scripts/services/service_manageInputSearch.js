@@ -1,6 +1,5 @@
 import { data_RegisterSingleton } from "../data/data_RegisterSingleton.js";
 import { service_updateRecipes } from "./service_updateRecipes.js";
-// import {service_filterRecipes} from "./service_filterRecipes.js";
 /** JS.DOC ==> 
  * -^-^-
  * @module and @function service_manageInputSearch

@@ -16,7 +16,7 @@ export class component_TagConstructor {
     
     tagContainer.innerHTML = `
       <input id="${targetItem}" name="${targetItem}" data-tag="${targetItem}" type="checkbox" class="hidden"/>
-      <label for="${targetItem}" class="w-full p-4 text-ellipsis text-nowrap hover:bg-yellow-300 cursor-pointer ">
+      <label for="${targetItem}" class="w-full p-4 truncate text-ellipsis text-nowrap hover:bg-yellow-300 cursor-pointer ">
         ${targetItem.toLowerCase()}
       </label>
     `;
