@@ -617,9 +617,6 @@
   .min-h-0 {
     min-height: calc(var(--spacing) * 0);
   }
-  .w-1\/2 {
-    width: calc(1/2 * 100%);
-  }
   .w-4 {
     width: calc(var(--spacing) * 4);
   }
@@ -632,9 +629,6 @@
   .w-full {
     width: 100%;
   }
-  .flex-1\/2 {
-    flex: calc(1/2 * 100%);
-  }
   .flex-auto {
     flex: auto;
   }
@@ -643,9 +637,6 @@
   }
   .rotate-45 {
     rotate: 45deg;
-  }
-  .rotate-90 {
-    rotate: 90deg;
   }
   .rotate-180 {
     rotate: 180deg;
@@ -792,9 +783,6 @@
   }
   .pr-24 {
     padding-right: calc(var(--spacing) * 24);
-  }
-  .pb-4 {
-    padding-bottom: calc(var(--spacing) * 4);
   }
   .pb-16 {
     padding-bottom: calc(var(--spacing) * 16);

@@ -8,8 +8,8 @@
 }
 
 .scrollbar-hidden {
-  scrollbar-width: none; /* Pour Firefox */
+  scrollbar-width: none; 
 }
 .scrollbar-hidden::-webkit-scrollbar {
-  display: none; /* Pour Chrome, Safari et Edge */
+  display: none; 
 }
