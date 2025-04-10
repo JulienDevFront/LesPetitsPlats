@@ -6,7 +6,8 @@ import { view_toggleMessageRecipesNoFound } from "./view_toggleMessageRecipesNoF
  * -^-^-
  * @module and @function view_displayElements
  * -^-^-
- * @description 
+ * @description Renders recipe cards, updates tag lists,
+ *  and  toggles  messages  based  on filtered  results.
  * -^-^-
  */
 export const view_displayElements = (targetRecipesContainer, targetMessageContainer, targetCategoryContainer, targetItems) => {

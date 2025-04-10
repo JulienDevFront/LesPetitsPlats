@@ -1,4 +1,3 @@
-import { component_TagConstructor } from "../components/component_TagConstructor";
 /** JS.DOC ==>
  * -^-^-
  * @module and @function view_toggleTagChecked
