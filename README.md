@@ -11,6 +11,7 @@ Le projet **LesPetitsPlats** consiste à développer une application de recherch
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
   <img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
 </p>
+
 ---
 
 ## 📂 Liens utiles
