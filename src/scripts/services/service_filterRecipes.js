@@ -7,29 +7,54 @@
  * -^-^-
  */
 export const service_filterRecipes = (items, targetValue = [], targetIngredient = [], targetAppliance = [], targetUstensils = []) => {
+    // Array of filtered items :
+    const filteredItems = [];
+    
+    
+    for (const item of items) {
+        // Search matchs of value :
+        let matchValue = targetValue.length === 0;
+        if(!matchValue) {
+            for(const value of targetValue) {
+                if(item.name.includes(value) || item.description.includes(value)) matchValue = true;
+            };
+        };
 
-    return items.filter(item => {
-        // Find a match of the target value :
-        const matchesValue = targetValue.length === 0 || 
-            targetValue.some(value => 
-                item.name.toLowerCase().includes(value) ||
-                item.description.toLowerCase().includes(value) || 
-                item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(value))
-            );
+        // Search matchs of ingredient :
+        let matchIngredient = targetIngredient.length === 0;
+        if(!matchIngredient)  {
+            for(const ingredient of targetIngredient) {
+                for(const ingredientsInItem of item.ingredients) {
+                    if(ingredientsInItem.ingredient.toLowerCase().includes(ingredient.toLowerCase())) matchIngredient = true;
+                };
+            };
+        };
+
+        // Search matchs of appliances :
+        let matchAppliance = targetAppliance.length === 0;
+        if(!matchAppliance) {
+            for(const appliance of targetAppliance) {
+                if(item.appliance.toLowerCase().includes(appliance.toLowerCase())) matchAppliance = true;
+            };
+        };
+
+        // Search matchs of ustensils :
+        let matchUstensil = targetUstensils.length === 0;
+        if(!matchUstensil) {
+            for(const ustensil of targetUstensils) {
+                for(const instensilInItem of item.ustensils) {
+                    if(instensilInItem.toLowerCase().includes(ustensil.toLowerCase())) matchUstensil = true;
+                };
+            };
+        };
+
+        // Add the item match in arr :
+        if(matchValue && matchIngredient && matchAppliance && matchUstensil) filteredItems.push(item);
+    };
+    console.log("@service_filterRecipes", "\nFiltered items :", filteredItems);
+    return filteredItems.length === 0
+        ? [...new Set(items)]
+        : filteredItems
         
-        // Find a match for the ingredients :
-        const matchesIngredients = targetIngredient.length === 0 ||
-            targetIngredient.every(tag => item.ingredients.some(ing => ing.ingredient.toLowerCase().includes(tag)));
-        
-        // Find a match for the appliances :
-        const matchesAppliance = targetAppliance.length === 0 || 
-            targetAppliance.some(tag => item.appliance.toLowerCase().includes(tag));
-       
-        // Find a match for the ustensils :
-        const matchesUstensils = targetUstensils.length === 0 || 
-            targetUstensils.every(tag => item.ustensils.some(ust => ust.toLowerCase().includes(tag)));
-        
-        // Return the value of the matchs :
-        return matchesValue && matchesIngredients && matchesAppliance && matchesUstensils;
-    });
 };
+
