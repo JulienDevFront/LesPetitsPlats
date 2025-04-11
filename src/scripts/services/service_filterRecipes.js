@@ -13,47 +13,47 @@ export const service_filterRecipes = (items, targetValue = [], targetIngredient 
     
     for (const item of items) {
         // Search matchs of value :
-        let matchValue = targetValue.length === 0;
-        if(!matchValue) {
+        let matchsValue = targetValue.length === 0;
+        if(!matchsValue) {
             for(const value of targetValue) {
-                if(item.name.includes(value) || item.description.includes(value)) matchValue = true;
+                if(item.name.includes(value) || item.description.includes(value)) matchsValue = true;
             };
         };
 
         // Search matchs of ingredient :
-        let matchIngredient = targetIngredient.length === 0;
-        if(!matchIngredient)  {
+        let matchsIngredient = targetIngredient.length === 0;
+        if(!matchsIngredient)  {
             for(const ingredient of targetIngredient) {
                 for(const ingredientsInItem of item.ingredients) {
-                    if(ingredientsInItem.ingredient.toLowerCase().includes(ingredient.toLowerCase())) matchIngredient = true;
+                    if(ingredientsInItem.ingredient.toLowerCase().includes(ingredient.toLowerCase())) matchsIngredient = true;
                 };
             };
         };
 
         // Search matchs of appliances :
-        let matchAppliance = targetAppliance.length === 0;
-        if(!matchAppliance) {
+        let matchsAppliance = targetAppliance.length === 0;
+        if(!matchsAppliance) {
             for(const appliance of targetAppliance) {
-                if(item.appliance.toLowerCase().includes(appliance.toLowerCase())) matchAppliance = true;
+                if(item.appliance.toLowerCase().includes(appliance.toLowerCase())) matchsAppliance = true;
             };
         };
 
         // Search matchs of ustensils :
-        let matchUstensil = targetUstensils.length === 0;
-        if(!matchUstensil) {
+        let matchsUstensil = targetUstensils.length === 0;
+        if(!matchsUstensil) {
             for(const ustensil of targetUstensils) {
                 for(const instensilInItem of item.ustensils) {
-                    if(instensilInItem.toLowerCase().includes(ustensil.toLowerCase())) matchUstensil = true;
+                    if(instensilInItem.toLowerCase().includes(ustensil.toLowerCase())) matchsUstensil = true;
                 };
             };
         };
 
         // Add the item match in arr :
-        if(matchValue && matchIngredient && matchAppliance && matchUstensil) filteredItems.push(item);
+        if(matchsValue && matchsIngredient && matchsAppliance && matchsUstensil) filteredItems.push(item);
     };
     console.log("@service_filterRecipes", "\nFiltered items :", filteredItems);
     return filteredItems.length === 0
-        ? [...new Set(items)]
+        ? items
         : filteredItems
         
 };

@@ -14,7 +14,7 @@ import { service_updateRecipes } from "./service_updateRecipes.js";
 
         // Add an event of type input and listen to the value :
         input.addEventListener("input", (e) => {
-              const value = e.target.value.toLowerCase().trim();
+            const value = e.target.value.toLowerCase().trim();
             const result = value
                 .split("+")
                 .map(term => term.match(/\p{L}+/gu)?.join(" ").trim() || "")
