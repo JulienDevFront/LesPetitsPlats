@@ -20,7 +20,6 @@ export const service_updateRecipes = (initialData) => {
         data_RegisterSingleton.appliances, 
         data_RegisterSingleton.ustensils
     );
-    console.log("@service_updateRecipes : \n", "\n - Filtered recipes :", filteredRecipes, "\n - And the register :", data_RegisterSingleton);
     
     // Manage of UI elements with the values :
     ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));

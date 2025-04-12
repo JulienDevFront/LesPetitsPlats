@@ -19,7 +19,6 @@ import { service_updateRecipes } from "./service_updateRecipes.js";
                 .split("+")
                 .map(term => term.match(/\p{L}+/gu)?.join(" ").trim() || "")
                 .filter(term => term.length > 2);
-            console.log("@service_manageInputSearch", "\n - Value of the input :", value, "\n - Result of the seizure :", result);
             
             //Search triggered if first word has at least 3 characters :
             if (result.length > 0 && result[0].length >= 3) {

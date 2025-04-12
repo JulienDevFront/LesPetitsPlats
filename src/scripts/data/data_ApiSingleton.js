@@ -15,7 +15,6 @@
        // Tools of the singleton :
       this._data = initialData;
       data_ApiSingleton.instance = this;
-      // console.log("@data_ApiSingleton - Singleton of recipes initialized!", "\nData of recipes:", this._data);
     };
   
     get data() {
