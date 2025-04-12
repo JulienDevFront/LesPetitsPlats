@@ -51,7 +51,8 @@ export const service_filterRecipes = (items, targetValue = [], targetIngredient 
         // Add the item match in arr :
         if(matchsValue && matchsIngredient && matchsAppliance && matchsUstensil) filteredItems.push(item);
     };
-    console.log("@service_filterRecipes", "\nFiltered items :", filteredItems);
+
+    
     return filteredItems.length === 0
         ? items
         : filteredItems

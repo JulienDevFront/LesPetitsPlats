@@ -28,22 +28,16 @@ export const service_manageTagSearch = (targetTagContainer, targetFromSearch, ta
             if(filter.length > 0){
                 tagContainer.innerHTML = "";
                 filter.forEach(i => tagContainer.append(component_TagConstructor.createTag(i.dataset.tag)));
-
-                //
                 ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
             } else {
                 tagContainer.innerHTML = "";
                 tagContainer.append(component_TagConstructor.createTagNoFound(value));
-
-                //
                 ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
             }
             
         } else {
             tagContainer.innerHTML = "";
             tags.forEach(i => tagContainer.append(component_TagConstructor.createTag(i.dataset.tag)));
-            
-            //
             ["ingredients", "appliances", "ustensils"].forEach(category => service_manageTagSelect(data_RegisterSingleton, category, initialData));
         }
     })
